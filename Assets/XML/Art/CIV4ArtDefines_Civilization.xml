@@ -344,8 +344,8 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_ISRAEL</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Carthage.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,5,1</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Tanit.dds</Path>
+			<Button>,Art/Interface/Buttons/Civilizations/israel.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Israel.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 	</CivilizationArtInfos>
