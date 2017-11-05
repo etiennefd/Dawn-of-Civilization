@@ -982,5 +982,13 @@
 			<NoShaderNIF>art/LeaderHeads/George I/ataturk.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/George I/peter_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BEN_GURION</Type>
+			<Button>,Art/interface/LeaderHeads/Btn_LH_America_Washington.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,4,7</Button>
+			<NIF>art/LeaderHeads/Hannibal/hannibal.nif</NIF>
+			<KFM>art/LeaderHeads/Hannibal/hannibal.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Hannibal/hannibal_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Hannibal/hannibal_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
