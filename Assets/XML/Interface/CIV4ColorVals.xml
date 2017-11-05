@@ -489,7 +489,7 @@
 			<fBlue>0.40</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
-		
+
 		<ColorVal>
 			<Type>COLOR_PLAYER_DARK_PINK</Type>
 			<fRed>0.69</fRed>
@@ -1160,6 +1160,13 @@
 			<fRed>0.95</fRed>
 			<fGreen>0.60</fGreen>
 			<fBlue>0.75</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_ISRAEL</Type>
+			<fRed>0.37</fRed>
+			<fGreen>0.53</fGreen>
+			<fBlue>0.69</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 	</ColorVals>

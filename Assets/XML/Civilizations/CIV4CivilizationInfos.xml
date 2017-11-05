@@ -2679,7 +2679,7 @@
 			<ShortDescription>TXT_KEY_CIV_ISRAEL_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_ISRAEL_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_ISRAEL_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_DARK_INDIGO</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_ISRAEL</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ISRAEL</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
