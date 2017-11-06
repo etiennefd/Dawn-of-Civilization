@@ -1582,6 +1582,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], received a defensive bonus and begin with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion.</English>
+		<English>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion.</English>
 	</TEXT>
 </Civ4GameText>
