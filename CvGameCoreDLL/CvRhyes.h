@@ -11,14 +11,14 @@ typedef list<char*> LISTCHAR;
 
 #define MAX_COM_SHRINE			(20)
 
-#define BEGIN_WONDERS				(162) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(163) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
-#define NUM_BUILDINGS_PLAGUE		(237) // always increment when a building is added
+#define NUM_BUILDINGS_PLAGUE		(238) // always increment when a building is added
 #define NUM_BUILDINGTYPES_PLAGUE	(158) // increment when a building class is added
 
-#define NUM_MAJOR_PLAYERS		(44)
+#define NUM_MAJOR_PLAYERS		(45)
 #define NUM_MINORS				(6)	 // Independent, Independent2, Natives, Celtia, Seljuks, Barbarians
-#define NUM_CIVS				(52)
+#define NUM_CIVS				(53)
 
 #define NUM_ERAS				(ERA_DIGITAL+1)
 
@@ -359,7 +359,7 @@ static const int lTechLeaderPenalty[NUM_ERAS] = {0, 0, 5, 10, 20, 20, 20};
 static const int lTechBackwardsBonus[NUM_ERAS] = {0, 5, 10, 15, 25, 25, 25};
 
 // Leoreth: order of persecution
-static const int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1] = 
+static const int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1] =
 {
 	// Judaism
 	{HINDUISM, BUDDHISM, TAOISM, CONFUCIANISM, ZOROASTRIANISM, ISLAM, PROTESTANTISM, CATHOLICISM, ORTHODOXY},

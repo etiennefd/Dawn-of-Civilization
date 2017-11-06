@@ -940,7 +940,7 @@ enum FeatureTypes					// Exposed to Python
 enum BonusTypes						// Exposed to Python
 {
 	NO_BONUS = -1,
-	
+
 	BONUS_ALUMINUM,
 	BONUS_COAL,
 	BONUS_COPPER,
@@ -1105,7 +1105,7 @@ enum LeaderHeadTypes			// Exposed to Python
 enum ArtStyleTypes				// Exposed to Python
 {
 	NO_ARTSTYLE = -1,
-	
+
 	ARTSTYLE_EUROPEAN,
 	ARTSTYLE_ASIAN,
 	ARTSTYLE_SOUTH_AMERICA_OLD,
@@ -1215,6 +1215,7 @@ enum PlayerTypes				// Exposed to Python
 	ARGENTINA,
 	BRAZIL,
 	CANADA,
+	ISRAEL,
 	INDEPENDENT,
 	INDEPENDENT2,
 	NATIVE,

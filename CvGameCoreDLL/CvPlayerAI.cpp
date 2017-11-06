@@ -2068,7 +2068,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
-    
+
     int iYieldLostHere = 0;
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -3426,8 +3426,8 @@ bool CvPlayerAI::AI_isFinancialTrouble() const
 		int iNetExpenses = calculateInflatedCosts() + std::max(0, -getGoldPerTurn());
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/		
-		
+/************************************************************************************************/
+
 		int iFundedPercent = (100 * (iNetCommerce - iNetExpenses)) / std::max(1, iNetCommerce);
 
 		int iSafePercent = 40;
@@ -4452,7 +4452,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 											}
 										}
 									}
-									
+
 								if (bEnablesUnitWonder)
 								{
 									int iWonderRandom = ((bAsync) ? GC.getASyncRand().get(400, "AI Research Wonder Unit ASYNC") : GC.getGameINLINE().getSorenRandNum(400, "AI Research Wonder Unit"));
@@ -6840,7 +6840,7 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, 
 				}
 			}
 			else if (GC.getVoteInfo(kVoteData.eVote).isRevokeMembership())
-			{	
+			{
 				FAssert(kVoteData.ePlayer != NO_PLAYER);
 				TeamTypes eWarTeam = GET_PLAYER(kVoteData.ePlayer).getTeam();
 
@@ -7311,7 +7311,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 				}
 			}
 		}
-		
+
 		// edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
 		for (pNode = pOurInventory->head(); pNode && iHumanDealWeight > iAIDealWeight; pNode = pOurInventory->next(pNode))
 		{
@@ -7900,7 +7900,7 @@ int CvPlayerAI::AI_bonusHappinessVal(BonusTypes eBonus, int iChange) const
 	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
 		iHappinessDifference = std::max(0, iChange * (pLoopCity->unhappyLevel() - pLoopCity->happyLevel()));
-		
+
 		if (pLoopCity->foodDifference() > 0) iHappinessDifference += iChange * std::min(5, pLoopCity->estimateGrowth(getTurns(25)));
 
 		iValue += iChange * range(pLoopCity->getBonusHappiness(eBonus), 0, iHappinessDifference);
@@ -8387,7 +8387,7 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 
 	iValue *= 100 + range(0, iCityDifference, iTotalCities / 2) * 20; //(getNumCities() + 3) * 30;
 	iValue /= 100;
-	
+
 	// Leoreth: consider relative gain (negative because their loss is our gain)
 	/*iTheirValue = GET_PLAYER(ePlayer).AI_bonusVal(eBonus, -1 * iChange);
 
@@ -8560,7 +8560,7 @@ int CvPlayerAI::AI_cityTradeVal(CvCity* pCity) const
 
 
 	if (GET_PLAYER(pCity->getOwnerINLINE()).getNumCities() > 12)
-		if (pCity->plot()->getSettlerValue(pCity->getOwnerINLINE()) < 500) 
+		if (pCity->plot()->getSettlerValue(pCity->getOwnerINLINE()) < 500)
 		{
 			iValue *= 2;
 			iValue /= 3;
@@ -10326,7 +10326,7 @@ int CvPlayerAI::AI_missionaryValue(CvArea* pArea, ReligionTypes eReligion, Playe
 				iSpreadInternalValue += 3000;
 			}
 		}
-	}			
+	}
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -10916,7 +10916,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/	
+/************************************************************************************************/
 
 	CvCivicInfo& kCivic = GC.getCivicInfo(eCivic);
 
@@ -11277,10 +11277,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		if (iI == YIELD_COMMERCE)
 		{
 			int iCapitalCommerce = 0;
-			
+
 			// Leoreth: commerce in capital per colony
 			iCapitalCommerce += kCivic.getColonyCommerce() * countColonies();
-			
+
 			// Leoreth: commerce in capital per vassal city
 			if (kCivic.getVassalCityCommerce() != 0)
 			{
@@ -11512,7 +11512,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 
 			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
 			{
-				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA)
+				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA || getID() == ISRAEL)
 				{
 					iValue /= 2;
 				}
@@ -11522,7 +11522,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 			{
 				iValue /= 2;
 			}
-			
+
 			if (iValue > iBestValue)
 			{
 				iBestValue = iValue;
@@ -11666,7 +11666,7 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 						}
 					}
 				}
-				
+
 				//SuperSpies: glider1 start
 				//Bribe
 				if (pSpyPlot->plotCount(PUF_isOtherTeam, getID(), -1, NO_PLAYER, NO_TEAM, PUF_isVisible, getID()) >= 1)
@@ -11680,7 +11680,7 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 							if (kMissionInfo.getBuyUnitCostFactor() > 0)
 							{
 								int iValue = AI_espionageVal(pSpyPlot->getOwnerINLINE(), (EspionageMissionTypes)iMission, pSpyPlot, -1);
-								
+
 								if (iValue > iBestValue)
 								{
 									iBestValue = iValue;
@@ -11814,9 +11814,9 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 							}
 						}
 					}
-					
+
 					//SuperSpies: glider1 start
-					//Assassinate 
+					//Assassinate
 					if (true)
 					{
 						for (int iMission = 0; iMission < GC.getNumEspionageMissionInfos(); ++iMission)
@@ -11826,7 +11826,7 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 							if (kMissionInfo.getDestroyUnitCostFactor() > 0)
 							{
 								SpecialistTypes theGreatSpecialistTarget = (SpecialistTypes)0;
-								
+
 								CvCity* pCity = pSpyPlot->getPlotCity();
 								if (NULL != pCity)
 								{
@@ -11853,10 +11853,10 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 											}
 										}
 									}
-								}	
-							
+								}
+
 								int iValue = AI_espionageVal(pSpyPlot->getOwnerINLINE(), (EspionageMissionTypes)iMission, pSpyPlot, -1);
-								
+
 								if (iValue > iBestValue)
 								{
 									iBestValue = iValue;
@@ -11869,8 +11869,8 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 						}
 					}
 				}
-				
-				//SuperSpies: TSHEEP - Counter Espionage (Why the heck don't AIs use this in vanilla?) - 
+
+				//SuperSpies: TSHEEP - Counter Espionage (Why the heck don't AIs use this in vanilla?) -
 				//Requires either annoyance or memory of past Spy transgression
 				if ((AI_getAttitudeWeight(pSpyPlot->getOwner()) < (GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI) ? 50 : 0) ||
 					AI_getMemoryCount(pSpyPlot->getOwner(), MEMORY_SPY_CAUGHT) > 0) &&
@@ -11883,7 +11883,7 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 						{
 							int iValue = AI_espionageVal(pSpyPlot->getOwnerINLINE(), (EspionageMissionTypes)iMission, pSpyPlot, -1);
 							iValue *= 2; //SuperSpies: Increase AI weight of techvalues TSHEEP
-							
+
 							if (iValue > iBestValue)
 							{
 								iBestValue = iValue;
@@ -12076,12 +12076,12 @@ int CvPlayerAI::AI_espionageVal(PlayerTypes eTargetPlayer, EspionageMissionTypes
 				}
 			}
 		}
-		if (theGreatSpecialistTarget >= 7) 
+		if (theGreatSpecialistTarget >= 7)
 		{
 			iValue += 1000;
 		}
 	}
-	
+
 	if (GC.getEspionageMissionInfo(eMission).getBuyUnitCostFactor() > 0)
 	{
 		/*
@@ -14467,7 +14467,7 @@ void CvPlayerAI::AI_doDiplo()
 											}
 										}
 									}
-								
+
 									// edead: start Relic trade based on Afforess' Advanced Diplomacy
 									//if (GET_TEAM(getTeam()).getLeaderID() == getID())
 									{
@@ -14507,7 +14507,7 @@ void CvPlayerAI::AI_doDiplo()
 
 																setTradeItem(&item, TRADE_GOLD, iTheirValue);
 																ourList.insertAtEnd(item);
-																	
+
 																setTradeItem(&item, TRADE_SLAVE, pSlave->getID());
 																theirList.insertAtEnd(item);
 
@@ -18748,8 +18748,8 @@ int CvPlayerAI::AI_getMinFoundValue() const
 	int iNetExpenses = calculateInflatedCosts() + std::max(0, -getGoldPerTurn());
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/		
-	
+/************************************************************************************************/
+
 	iValue *= iNetCommerce;
 	iValue /= std::max(std::max(1, iNetCommerce / 4), iNetCommerce - iNetExpenses);
 
@@ -19630,7 +19630,7 @@ int CvPlayerAI::AI_getHealthWeight(int iHealth, int iExtraPop) const
 			break;
 		}
 	}
-	
+
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       10/21/09                                jdog5000      */
 /*                                                                                              */
