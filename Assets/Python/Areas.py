@@ -144,6 +144,7 @@ tCapitals = (
 (34, 11), # Buenos Aires
 (41, 18), # Rio de Janeiro
 (30, 52), # Montreal
+(73, 38), # Jerusalem
 )
 
 dChangedCapitals = {
@@ -232,6 +233,7 @@ tBirthArea = (
 ((31, 3), 	(35, 13)), 	# Argentina
 ((36, 15), 	(43, 27)), 	# Brazil
 ((20, 50), 	(35, 60)), 	# Canada
+((72, 37), 	(74, 39)), 	# Israel
 )
 
 dChangedBirthArea = {
@@ -318,6 +320,7 @@ tCoreArea = (
 ((31, 6),	(35, 12)),	# Argentina
 ((37, 15),	(41, 22)),	# Brazil
 ((27, 50),	(35, 52)),	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedCoreArea = {
@@ -423,6 +426,7 @@ tNormalArea = (
 ((31,  3), 	(36, 15)), 	# Argentina
 ((32, 14), 	(43, 28)), 	# Brazil
 (( 8, 50), 	(37, 67)), 	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedNormalArea = {
@@ -507,6 +511,7 @@ tBroaderArea = (
 ((29,  3), 	(36, 15)), 	# Argentina
 ((32, 14), 	(43, 28)), 	# Brazil
 (( 8, 50), 	(37, 67)), 	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedBroaderArea = {
