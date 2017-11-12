@@ -1409,12 +1409,14 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(2010):
 			expire(iIsrael, 1)
 
-		# third goal: have the city with the highest science output in 2010 AD
+		# third goal: have the city with the highest research output in 2010 AD
 		if iGameTurn == getTurnForYear(2010):
-			if isBestCity(iIsrael, (73, 38), cityResearchOutput):
+			highestResearchCity = getHighestResearchCity(iIsrael)
+			if isBestCity(iPlayer, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput):
 				win(iIsrael, 2)
 			else:
 				lose(iIsrael, 2)
+
 
 	# check religious victory (human only)
 	if utils.getHumanID() == iPlayer:
@@ -2382,7 +2384,7 @@ def cityTradeIncome(city):
 
 def cityResearchOutput(city):
 	if not city: return 0
-	return city.getResearchRate
+	return city.getResearchRate()
 
 def cityHappiness(city):
 	if not city: return 0
@@ -2547,6 +2549,9 @@ def countOpenBorders(iPlayer, lContacts = [i for i in range(iNumPlayers)]):
 
 def getMostCulturedCity(iPlayer):
 	return utils.getHighestEntry(utils.getCityList(iPlayer), lambda x: x.getCulture(iPlayer))
+
+def getHighestResearchCity(iPlayer):
+	return utils.getHighestEntry(utils.getCityList(iPlayer), cityResearchOutput)
 
 def isAreaFreeOfCivs(lPlots, lCivs):
 	for city in utils.getAreaCities(lPlots):
@@ -3977,8 +3982,9 @@ def getUHVHelp(iPlayer, iGoal):
 			iSpies = pIsrael.getGreatSpiesCreated()
 			aHelp.append(getIcon(iSpies >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 3)))
 		elif iGoal == 2:
-			pBestCity = getBestCity(iIsrael, (73, 38), cityResearchOutput)
-			bBestCity = isBestCity(iIsrael, (73, 38), cityResearchOutput)
+			highestResearchCity = getHighestResearchCity(iIsrael)
+			pBestCity = getBestCity(iIsrael, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput)
+			bBestCity = isBestCity(iIsrael, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput)
 			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_OUTPUT", (pBestCity.getName(),)))
 
 	return aHelp
