@@ -1396,7 +1396,7 @@ def checkTurn(iGameTurn, iPlayer):
 
 	elif iPlayer == iIsrael :
 
-		# first goal: control an ICBM by 1980
+		# first goal: build an ICBM by 1980
 		if isPossible(iIsrael, 0):
 			iIsraeliNuclearArsenal = pIsrael.getUnitClassCount(gc.getUnitInfo(iICBM).getUnitClassType())
 			if iIsraeliNuclearArsenal >= 1:
@@ -1405,8 +1405,8 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1980):
 			expire(iIsrael, 0)
 
-		# second goal: create three great spies by 2010 AD
-		if iGameTurn == getTurnForYear(2010):
+		# second goal: create three great spies by 2000 AD
+		if iGameTurn == getTurnForYear(2000):
 			expire(iIsrael, 1)
 
 		# third goal: have the city with the highest research output in 2010 AD
