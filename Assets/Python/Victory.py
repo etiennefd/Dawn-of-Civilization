@@ -3977,8 +3977,8 @@ def getUHVHelp(iPlayer, iGoal):
 			iSpies = pIsrael.getGreatSpiesCreated()
 			aHelp.append(getIcon(iSpies >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 3)))
 		elif iGoal == 2:
-			pBestCity = getBestCity(iIsrael, (73, 38), cityPopulation)
-			bBestCity = isBestCity(iIsrael, (73, 38), cityPopulation)
+			pBestCity = getBestCity(iIsrael, (73, 38), cityResearchOutput)
+			bBestCity = isBestCity(iIsrael, (73, 38), cityResearchOutput)
 			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_OUTPUT", (pBestCity.getName(),)))
 
 	return aHelp
