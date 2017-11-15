@@ -44683,10 +44683,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (China)
 	EndUnit
 	BeginCity
-		CityOwner=44, (China)
+		CityOwner=45, (China)
 		CityName=Lasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -44697,7 +44697,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player44Culture=100, (China)
+		Player45Culture=100, (China)
 	EndCity
 	TeamReveal=1,34,45,46,
 EndPlot
