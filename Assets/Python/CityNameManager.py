@@ -21,7 +21,7 @@ iLangFrench, iLangEnglish, iLangGerman, iLangRussian, iLangDutch,
 iLangMalian, iLangPolish, iLangPortuguese, iLangQuechua, iLangItalian,
 iLangMongolian, iLangAztec, iLangTurkish, iLangThai, iLangCongolese,
 iLangPrussian, iLangAmerican, iLangCeltic, iLangMexican, iLangPolynesian,
-iLangHarappan, ILangHebrew) = range(iNumLanguages)
+iLangHarappan, iLangHebrew) = range(iNumLanguages)
 
 # methods
 
