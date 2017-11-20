@@ -1125,7 +1125,7 @@ lEnemyCivsOnSpawn = [
 [iSpain, iSpain, iIndependent,iIndependent2], #Argentina
 [iIndependent,iIndependent2], #Brazil
 [], #Canada
-[iEgypt,iArabia], #Israel
+[iEgypt,iEgypt,iEgypt,iArabia,iArabia,iArabia,iTurkey,iTurkey], #Israel
 ]
 
 # Leoreth

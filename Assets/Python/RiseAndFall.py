@@ -2462,9 +2462,9 @@ class RiseAndFall:
 			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 		elif iCiv == iIsrael:
-			utils.makeUnit(iInfantry, iCiv, tPlot, 1)
+			utils.makeUnit(iInfantry, iCiv, tPlot, 2)
 			utils.makeUnit(iTank, iCiv, tPlot, 1)
-			utils.makeUnit(iFighter, iCiv, tPlot, 1)
+			utils.makeUnit(iFighter, iCiv, tPlot, 2)
 
 
 	def createStartingUnits(self, iCiv, tPlot):
@@ -2853,11 +2853,12 @@ class RiseAndFall:
 			utils.makeUnit(iRifleman, iCiv, tPlot, 5)
 		elif iCiv == iIsrael:
 			utils.makeUnit(iInfantry, iCiv, tPlot, 2)
-			utils.makeUnit(iTank, iCiv, tPlot, 1)
-			utils.makeUnit(iFighter, iCiv, tPlot, 1)
+			utils.makeUnit(iTank, iCiv, tPlot, 2)
+			utils.makeUnit(iFighter, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iTransport, iCiv, tSeaPlot, 1)
 
 		# Leoreth: start wars on spawn when the spawn actually happens
 		self.startWarsOnSpawn(iCiv)
