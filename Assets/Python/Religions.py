@@ -93,6 +93,7 @@ class Religions:
 
 		self.spreadJudaismEurope(iGameTurn)
 		self.spreadJudaismMiddleEast(iGameTurn)
+		self.spreadJudaismNorthAmerica(iGameTurn)
 		
 		self.spreadIslamIndonesia(iGameTurn)
 
