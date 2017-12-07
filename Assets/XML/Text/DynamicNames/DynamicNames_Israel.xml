@@ -7,7 +7,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_PEOPLES</Tag>
-		<English>Israeli Peoples</English>
+		<English>Zionist Peoples</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_DEFAULT</Tag>
@@ -59,13 +59,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_COMMUNIST</Tag>
-		<English>Socialist State of %s1</English>
+		<English>Labor Zionist State of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_FASCIST</Tag>
 		<English>Land of Greater %s1</English>
 		<French>
-			<Text>Empire %s2</Text>
+			<Text>Grand %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -75,12 +75,12 @@
 			<Plural>0:0:0</Plural>
 		</German>
 		<Italian>
-			<Text>Impero %s2</Text>
+			<Text>Grande %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Imperio %s2</Text>
+			<Text>Gran %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
