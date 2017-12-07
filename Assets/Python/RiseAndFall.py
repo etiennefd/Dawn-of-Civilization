@@ -2462,7 +2462,7 @@ class RiseAndFall:
 			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 		elif iCiv == iIsrael:
-			utils.makeUnit(iInfantry, iCiv, tPlot, 2)
+			utils.makeUnit(iInfantry, iCiv, tPlot, 3)
 			utils.makeUnit(iTank, iCiv, tPlot, 1)
 			utils.makeUnit(iFighter, iCiv, tPlot, 2)
 
@@ -2855,6 +2855,7 @@ class RiseAndFall:
 			utils.makeUnit(iInfantry, iCiv, tPlot, 2)
 			utils.makeUnit(iTank, iCiv, tPlot, 2)
 			utils.makeUnit(iFighter, iCiv, tPlot, 2)
+			utils.makeUnit(iSpy, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
