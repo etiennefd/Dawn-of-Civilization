@@ -257,7 +257,7 @@ class Resources:
 		elif iGameTurn == getTurnForYear(1850):
 			self.createResource(12, 45, iWine) # California
 			self.createResource(31, 10, iWine) # Andes
-			self.createResource(113, 12, iWine) # Barossa Valley, Australia
+			self.createResource(113, 11, iWine) # Barossa Valley, Australia
 			
 			self.createResource(114, 11, iSheep) # Australia
 			self.createResource(116, 13, iSheep) # Australia
@@ -280,4 +280,4 @@ class Resources:
 			# flood plains in California
 			for tPlot in [(11, 46), (11, 47), (11, 48)]:
 				x, y = tPlot
-				gc.getMap().plot(x,y).setFeatureType(3, 0)
+				gc.getMap().plot(x,y).setFeatureType(iFloodPlains, 0)

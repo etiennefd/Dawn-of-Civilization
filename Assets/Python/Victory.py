@@ -207,6 +207,7 @@ dWonderGoals = {
 	iCarthage: (0, [iGreatCothon], False),
 	iPolynesia: (2, [iMoaiStatues], True),
 	iMaya: (1, [iTempleOfKukulkan], True),
+	iMoors: (1, [iMezquita], False),
 	iKhmer: (0, [iWatPreahPisnulok], False),
 	iFrance: (2, [iNotreDame, iVersailles, iStatueOfLiberty, iEiffelTower], True),
 	iMali: (1, [iUniversityOfSankore], False),
@@ -794,26 +795,48 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iIndonesia, 2)
 
 	elif iPlayer == iMoors:
+<<<<<<< HEAD
 
 		# first goal: control three cities in Iberia, the Maghreb and West Africa in 1200 AD
+=======
+	
+		# first goal: control three cities in the Maghreb and conquer two cities in Iberia and West Africa
+>>>>>>> upstream/develop
 		if iGameTurn == getTurnForYear(1200):
-			bIberia = getNumCitiesInArea(iMoors, utils.getPlotList(tIberiaTL, tIberiaBR)) >= 3
+			bIberia = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tIberiaTL, tIberiaBR)) >= 2
 			bMaghreb = getNumCitiesInArea(iMoors, utils.getPlotList(tMaghrebTL, tMaghrebBR)) >= 3
+<<<<<<< HEAD
 			bWestAfrica = getNumCitiesInArea(iMoors, utils.getPlotList(tWestAfricaTL, tWestAfricaBR)) >= 3
 
+=======
+			bWestAfrica = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tWestAfricaTL, tWestAfricaBR)) >= 2
+			
+>>>>>>> upstream/develop
 			if bIberia and bMaghreb and bWestAfrica:
 				win(iMoors, 0)
 			else:
 				lose(iMoors, 0)
+<<<<<<< HEAD
 
 		# second goal: settle five great prophets, scientists or engineers in Cordoba by 1300 AD
+=======
+				
+		# second goal: build La Mezquita and settle four great prophets, scientists or engineers in Cordoba by 1300 AD
+>>>>>>> upstream/develop
 		if isPossible(iMoors, 1):
+			bMezquita = data.getWonderBuilder(iMezquita) == iMoors
+		
 			iCounter = 0
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatProphet)
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatScientist)
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatEngineer)
+<<<<<<< HEAD
 
 			if iCounter >= 5:
+=======
+			
+			if bMezquita and iCounter >= 4:
+>>>>>>> upstream/develop
 				win(iMoors, 1)
 
 		if iGameTurn == getTurnForYear(1300):
@@ -882,6 +905,7 @@ def checkTurn(iGameTurn, iPlayer):
 			expire(iFrance, 2)
 
 	elif iPlayer == iKhmer:
+<<<<<<< HEAD
 
 		# first goal: build four Hindu and Buddhist monasteries and Wat Preah Pisnulok by 1200 AD
 		if iGameTurn == getTurnForYear(1200):
@@ -895,6 +919,28 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1450):
 			expire(iKhmer, 1)
 
+=======
+	
+		# first Khmer goal: build four Buddhist and Hindu monasteries and Wat Preah Pisnulok in 1200 AD
+		if iGameTurn == getTurnForYear(1200):
+			if isPossible(iKhmer, 0):
+				iBuddhist = getNumBuildings(iKhmer, iBuddhistMonastery)
+				iHindu = getNumBuildings(iKhmer, iHinduMonastery)
+				bWatPreahPisnulok = data.getWonderBuilder(iWatPreahPisnulok) == iKhmer
+				if iBuddhist >= 4 and iHindu >= 4 and bWatPreahPisnulok:
+					win(iKhmer, 0)
+				else:
+					lose(iKhmer, 0)
+				
+		# second goal: have an average city size of 12 in 1450 AD
+		if iGameTurn == getTurnForYear(1450):
+			if isPossible(iKhmer, 1):
+				if getAverageCitySize(iKhmer) >= 12.0:
+					win(iKhmer, 1)
+				else:
+					lose(iKhmer, 1)
+			
+>>>>>>> upstream/develop
 		# third goal: have 8000 culture by 1450 AD
 		if isPossible(iKhmer, 2):
 			if pKhmer.countTotalCulture() >= utils.getTurns(8000):
@@ -1674,10 +1720,15 @@ def onBuildingBuilt(iPlayer, iBuilding):
 		data.setWonderBuilder(iBuilding, iPlayer)
 
 		for iLoopPlayer in dWonderGoals.keys():
+<<<<<<< HEAD
 			iGoal = dWonderGoals[iLoopPlayer][0]
 			lWonders = dWonderGoals[iLoopPlayer][1]
 			bCanWin = dWonderGoals[iLoopPlayer][2]
 
+=======
+			iGoal, lWonders, bCanWin = dWonderGoals[iLoopPlayer]
+			
+>>>>>>> upstream/develop
 			if not isPossible(iLoopPlayer, iGoal): continue
 
 			if iBuilding in lWonders:
@@ -1737,6 +1788,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				bConfucian = getNumBuildings(iKorea, iConfucianCathedral) > 0
 				if bBuddhist and bConfucian:
 					win(iKorea, 0)
+<<<<<<< HEAD
 
 	# first Khmer goal: build four Buddhist and Hindu monasteries and Wat Preah Pisnulok by 1200 AD
 	elif iPlayer == iKhmer:
@@ -1748,6 +1800,9 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				if iBuddhist >= 4 and iHindu >= 4 and bWatPreahPisnulok:
 					win(iKhmer, 0)
 
+=======
+					
+>>>>>>> upstream/develop
 	# third Polish goal: build a total of three Catholic, Orthodox and Protestant Cathedrals by 1600 AD
 	elif iPlayer == iPoland:
 		if isPossible(iPoland, 2):
@@ -2461,12 +2516,20 @@ def getNumCitiesInArea(iPlayer, lPlots):
 	return len(utils.getAreaCitiesCiv(iPlayer, lPlots))
 
 def getNumFoundedCitiesInArea(iPlayer, lPlots):
+<<<<<<< HEAD
 	iCount = 0
 	for city in utils.getAreaCitiesCiv(iPlayer, lPlots):
 		if city.getOriginalOwner() == iPlayer:
 			iCount += 1
 	return iCount
 
+=======
+	return len([city for city in utils.getAreaCitiesCiv(iPlayer, lPlots) if city.getOriginalOwner() == iPlayer])
+	
+def getNumConqueredCitiesInArea(iPlayer, lPlots):
+	return len([city for city in utils.getAreaCitiesCiv(iPlayer, lPlots) if city.getOriginalOwner() != iPlayer])
+	
+>>>>>>> upstream/develop
 def checkOwnedCiv(iPlayer, iOwnedPlayer):
 	iPlayerCities = getNumCitiesInArea(iPlayer, Areas.getNormalArea(iOwnedPlayer, False))
 	iOwnedCities = getNumCitiesInArea(iOwnedPlayer, Areas.getNormalArea(iOwnedPlayer, False))
@@ -3619,16 +3682,17 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iMoors:
 		if iGoal == 0:
-			iIberia = getNumCitiesInArea(iMoors, utils.getPlotList(tIberiaTL, tIberiaBR))
+			iIberia = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tIberiaTL, tIberiaBR))
 			iMaghreb = getNumCitiesInArea(iMoors, utils.getPlotList(tMaghrebTL, tMaghrebBR))
-			iWestAfrica = getNumCitiesInArea(iMoors, utils.getPlotList(tWestAfricaTL, tWestAfricaBR))
-			aHelp.append(getIcon(iIberia >= 3) + localText.getText("TXT_KEY_VICTORY_IBERIA", (iIberia, 3)) + ' ' + getIcon(iMaghreb >= 3) + localText.getText("TXT_KEY_VICTORY_MAGHREB_MOORS", (iMaghreb, 3)) + ' ' + getIcon(iWestAfrica >= 3) + localText.getText("TXT_KEY_VICTORY_WEST_AFRICA", (iWestAfrica, 3)))
+			iWestAfrica = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tWestAfricaTL, tWestAfricaBR))
+			aHelp.append(getIcon(iMaghreb >= 3) + localText.getText("TXT_KEY_VICTORY_MAGHREB_MOORS", (iMaghreb, 3)) + ' ' + getIcon(iIberia >= 2) + localText.getText("TXT_KEY_VICTORY_IBERIA", (iIberia, 2)) + ' ' + getIcon(iWestAfrica >= 2) + localText.getText("TXT_KEY_VICTORY_WEST_AFRICA", (iWestAfrica, 2)))
 		elif iGoal == 1:
+			bMezquita = data.getWonderBuilder(iMezquita) == iMoors
 			iCounter = 0
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatProphet)
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatScientist)
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatEngineer)
-			aHelp.append(getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 5)))
+			aHelp.append(getIcon(bMezquita) + localText.getText("TXT_KEY_BUILDING_LA_MEZQUITA", ()) + ' ' + getIcon(iCounter >= 4) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 5)))
 		elif iGoal == 2:
 			iRaidGold = data.iMoorishGold
 			aHelp.append(getIcon(iRaidGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_PIRACY", (iRaidGold, utils.getTurns(3000))))
@@ -3654,7 +3718,7 @@ def getUHVHelp(iPlayer, iGoal):
 			fEurope = (iEurope + iEasternEurope) * 100.0 / (iTotalEurope + iTotalEasternEurope)
 			fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
 			aHelp.append(getIcon(fEurope >= 40.0) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_TERRITORY", (str(u"%.2f%%" % fEurope), str(40))) + ' ' + getIcon(fNorthAmerica >= 40.0) + localText.getText("TXT_KEY_VICTORY_NORTH_AMERICAN_TERRITORY", (str(u"%.2f%%" % fNorthAmerica), str(40))))
-		elif iGoal == 2:	# not entirely correct, this counts conquered ones as well
+		elif iGoal == 2:
 			bNotreDame = data.getWonderBuilder(iNotreDame) == iFrance
 			bVersailles = data.getWonderBuilder(iVersailles) == iFrance
 			bStatueOfLiberty = data.getWonderBuilder(iStatueOfLiberty) == iFrance

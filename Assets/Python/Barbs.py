@@ -5,14 +5,13 @@ import CvUtil
 import PyHelpers	# LOQ
 #import Popup
 #import cPickle as pickle
-import RFCUtils
+from RFCUtils import utils
 from Consts import *
 from StoredData import data
 
 # globals
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer	# LOQ
-utils = RFCUtils.RFCUtils()
 
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
@@ -265,8 +264,10 @@ class Barbs:
 				sAdj = ["TXT_KEY_ADJECTIVE_GHANAIAN"]
 			else:
 				sAdj = ["TXT_KEY_ADJECTIVE_SONGHAI"]
-			self.checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
 			self.checkSpawn(iNative, iImpi, 2, (48, 22), (63, 29), self.spawnMinors, iGameTurn, 16, 10, sAdj)
+			
+		if utils.isYearIn(1200, 1700):
+			self.checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
 
 		#American natives
 		if utils.isYearIn(600, 1100):

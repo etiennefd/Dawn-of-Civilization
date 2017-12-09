@@ -382,7 +382,7 @@ class CvEspionageAdvisor:
 						iRow = screen.appendTableRow("ActiveTable")
 						screen.setTableText("ActiveTable", 0, iRow, "<font=2>" + szMission + "</font>", "", WidgetTypes.WIDGET_ESPIONAGE_SELECT_MISSION, iLoopMission, -1, CvUtil.FONT_LEFT_JUSTIFY)
 						if iCost > 0:
-							screen.setTableInt("ActiveTable", 1, iRow, "<font=2>" + szCost + "</font>", "", WidgetTypes.WIDGET_ESPIONAGE_SELECT_MISSION, iLoopMission, -1, CvUtil.FONT_RIGHT_JUSTIFY)
+							screen.setTableInt("ActiveTable", 1, iRow, "<font=2>" + szCost + "   </font>", "", WidgetTypes.WIDGET_ESPIONAGE_SELECT_MISSION, iLoopMission, -1, CvUtil.FONT_RIGHT_JUSTIFY)
 
 
 
@@ -462,14 +462,17 @@ class CvEspionageAdvisor:
 
 
 	def resetEspionageWeights(self):
+		iActivePlayer = CyGame().getActivePlayer()
+		iActiveTeam = CyGame().getActiveTeam()
+	
 		for iRival in xrange(gc.getMAX_CIV_PLAYERS()):
 			pRival = gc.getPlayer(iRival)
 			iRivalTeam = pRival.getTeam()
-			if iRivalTeam == self.iActiveTeam:
+			if iRivalTeam == iActiveTeam:
 				continue
 
-			if pRival.isAlive() and self.pActiveTeam.isHasMet(iRivalTeam):
-				iChange = -1 * self.pActivePlayer.getEspionageSpendingWeightAgainstTeam(iRivalTeam)
+			if pRival.isAlive() and gc.getTeam(iActiveTeam).isHasMet(iRivalTeam):
+				iChange = -1 * gc.getPlayer(iActivePlayer).getEspionageSpendingWeightAgainstTeam(iRivalTeam)
 				CyMessageControl().sendEspionageSpendingWeightChange(iRivalTeam, iChange)
 
 		CyInterface().setDirty(InterfaceDirtyBits.Espionage_Advisor_DIRTY_BIT, True)
