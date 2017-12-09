@@ -2466,7 +2466,6 @@ def getNumFoundedCitiesInArea(iPlayer, lPlots):
 def getNumConqueredCitiesInArea(iPlayer, lPlots):
 	return len([city for city in utils.getAreaCitiesCiv(iPlayer, lPlots) if city.getOriginalOwner() != iPlayer])
 
->>>>>>> upstream/develop
 def checkOwnedCiv(iPlayer, iOwnedPlayer):
 	iPlayerCities = getNumCitiesInArea(iPlayer, Areas.getNormalArea(iOwnedPlayer, False))
 	iOwnedCities = getNumCitiesInArea(iOwnedPlayer, Areas.getNormalArea(iOwnedPlayer, False))
