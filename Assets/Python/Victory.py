@@ -2383,7 +2383,7 @@ def cityTradeIncome(city):
 
 def cityResearchOutput(city):
 	if not city: return 0
-	return city.getResearchRate()
+	return city.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)
 
 def cityHappiness(city):
 	if not city: return 0

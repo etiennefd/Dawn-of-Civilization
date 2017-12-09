@@ -2715,7 +2715,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_PARK</BuildingClassType>
 					<BuildingType>BUILDING_ISRAELI_KIBBUTZ</BuildingType>
 				</Building>
 				<Building>
