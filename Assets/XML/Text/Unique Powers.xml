@@ -721,4 +721,13 @@
 		<Tag>TXT_KEY_UP_ISR</Tag>
 		<English>Extra food and production in your capital from Jewish cities with open borders; immigration from Jewish cities at war</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_EMIGRATION_ALIYAH</Tag>
+		<English>The Jewish population of %s1 is fleeing to Israel!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IMMIGRATION_ALIYAH</Tag>
+		<English>The Jewish population of %s1 is fleeing from %s2 and performing their Aliyah to our capital city!</English>
+	</TEXT>
+
 </Civ4GameText>
