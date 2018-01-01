@@ -6259,6 +6259,16 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				}
 			}
 		}
+		else if (eBuilding == LA_MEZQUITA)
+		{
+			if (GET_PLAYER(MOORS).isHuman())
+			{
+				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(MOORS).getBirthTurn()+5)
+				{
+					return false;
+				}
+			}
+		}
 	}
 
 	return true;
@@ -7372,7 +7382,8 @@ int CvPlayer::calculatePreInflatedCosts() const
 
 int CvPlayer::calculateInflationRate() const
 {
-	int iTurns = ((GC.getGameINLINE().getGameTurn() + GC.getGameINLINE().getElapsedGameTurns()) / 2);
+	//int iTurns = ((GC.getGameINLINE().getGameTurn() + GC.getGameINLINE().getElapsedGameTurns()) / 2);
+	int iTurns = GC.getGameINLINE().getGameTurn();
 
 	if (GC.getGameINLINE().getMaxTurns() > 0)
 	{
@@ -7386,8 +7397,7 @@ int CvPlayer::calculateInflationRate() const
 		return 0;
 	}
 
-	// Leoreth: no inflation for America in the beginning to help its start
-	if (getID() == AMERICA && GC.getGameINLINE().getGameTurnYear() < 1840)
+	if (GC.getGameINLINE().getGameTurn() <= getTurnForYear(GC.getCivilizationInfo(getCivilizationType()).getStartingYear()) + GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getInflationOffset() / 2)
 	{
 		return 0;
 	}
@@ -10171,7 +10181,7 @@ int CvPlayer::getExtraHappiness() const
 	{
 		int iCivicHappiness = 0;
 
-		if (getCivics(CIVICOPTION_GOVERNMENT) == CIVIC_REPUBLIC) iCivicHappiness += 2;
+		if (getCivics(CIVICOPTION_GOVERNMENT) == CIVIC_DEMOCRACY) iCivicHappiness += 2;
 		if (getCivics(CIVICOPTION_LEGITIMACY) == CIVIC_CONSTITUTION) iCivicHappiness += 2;
 		if (getCivics(CIVICOPTION_SOCIETY) == CIVIC_INDIVIDUALISM) iCivicHappiness += 2;
 		if (getCivics(CIVICOPTION_ECONOMY) == CIVIC_FREE_ENTERPRISE) iCivicHappiness += 2;

@@ -407,7 +407,7 @@ dForeignNames = {
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
-lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil]
+lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings]
 lSocialistRepublicAdj = [iPersia, iItaly, iAztecs, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo]
@@ -1065,7 +1065,7 @@ def specificName(iPlayer):
 		bSpain = not pMoors.isAlive() or not utils.isPlotInArea(capitalCoords(iMoors), vic.tIberiaTL, vic.tIberiaBR)
 	
 		if bSpain:
-			if not pPortugal.isAlive() or getMaster(iPortugal) == iPlayer or not utils.isPlotInArea(capitalCoords(iPortugal), vic.tIberiaTL, vic.tIberiaBR):
+			if not pPortugal.isAlive() or not utils.isPlotInArea(capitalCoords(iPortugal), vic.tIberiaTL, vic.tIberiaBR):
 				return "TXT_KEY_CIV_SPAIN_IBERIA"
 			
 		if isCapital(iPlayer, ["Barcelona", "Valencia"]):
@@ -1091,7 +1091,7 @@ def specificName(iPlayer):
 			
 	elif iPlayer == iRussia:
 		if not (bEmpire and iEra >= iRenaissance) and not isAreaControlled(iPlayer, tEuropeanRussiaTL, tEuropeanRussiaBR, 5, tEuropeanRussiaExceptions):
-			if isCapital(iPlayer, ["Moskva"]):
+			if not bCityStates and isCapital(iPlayer, ["Moskva"]):
 				return "TXT_KEY_CIV_RUSSIA_MUSCOVY"
 				
 			return capitalName(iPlayer)
@@ -1209,10 +1209,7 @@ def specificAdjective(iPlayer):
 			
 	elif iPlayer == iChina:
 		if bMonarchy:
-			if bResurrected:
-				return "TXT_KEY_CIV_CHINA_SONG"
-		
-			if iEra == iMedieval:
+			if iEra >= iMedieval:
 				if tPlayer.isHasTech(iPaper) and tPlayer.isHasTech(iGunpowder):
 					return "TXT_KEY_CIV_CHINA_SONG"
 			
