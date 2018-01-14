@@ -30122,7 +30122,7 @@ BeginPlot
 		UnitType=UNIT_ARCHER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Tisfun
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY

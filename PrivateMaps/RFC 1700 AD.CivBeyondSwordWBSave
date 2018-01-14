@@ -22041,7 +22041,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=38,44,45,
+	TeamReveal=38,45,46,
 EndPlot
 BeginPlot
 	x=51,y=30
@@ -23099,7 +23099,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=45,
+	TeamReveal=46,
 EndPlot
 BeginPlot
 	x=53,y=32
@@ -24703,7 +24703,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=38,44,45,
+	TeamReveal=38,45,46,
 EndPlot
 BeginPlot
 	x=56,y=30
