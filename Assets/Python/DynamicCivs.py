@@ -812,7 +812,7 @@ def isRepublic(iPlayer):
 def isCityStates(iPlayer):
 	iGovernment, iLegitimacy, _, _, _, _ = getCivics(iPlayer)
 	
-	if iLegitimacy not in [iAuthority, iCitizenship]: return False
+	if iLegitimacy not in [iAuthority, iCitizenship, iCentralism]: return False
 	
 	if iGovernment in [iRepublic, iElective, iDemocracy]: return True
 	
@@ -1624,6 +1624,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iEthiopia:
+		if bCityStates:
+			return "TXT_KEY_CITY_STATES_ADJECTIVE"
+	
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
 	

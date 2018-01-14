@@ -153,7 +153,10 @@ class CvRFCEventHandler:
 			utils.removeSlaves(city)
 		else:
 			utils.freeSlaves(city, iPlayer)
-					
+			
+		if city.isCapital():
+			if city.isHasRealBuilding(iAdministrativeCenter): 
+				city.setHasRealBuilding(iAdministrativeCenter, False)	
 							
 		# kill Seljuks
 		#if iOwner == iSeljuks and gc.getPlayer(iSeljuks).isAlive() and gc.getGame().getGameTurnYear() >= 1250:
@@ -308,6 +311,12 @@ class CvRFCEventHandler:
 			
 			city.setHasRealBuilding(iTemple + 4*gc.getPlayer(iOwner).getStateReligion(), True)
 			
+		if iOwner == iPortugal and tCity == Areas.getCapital(iPortugal) and gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iPortugal]) + 3:
+			city.setPopulation(5)
+			
+			for iBuilding in [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls, iTemple+4*gc.getPlayer(iPortugal).getStateReligion()]:
+				city.setHasRealBuilding(iBuilding, True)
+			
 		if iOwner == iNetherlands and tCity == Areas.getCapital(iNetherlands) and gc.getGame().getGameTurn() <= getTurnForYear(1580)+3:
 			city.setPopulation(9)
 			
@@ -428,8 +437,7 @@ class CvRFCEventHandler:
 		if iPlayer < iNumPlayers:
 			dc.onRevolution(iPlayer)
 			
-		if not gc.getPlayer(iPlayer).isColonialSlavery():
-			utils.clearSlaves(iPlayer)
+		utils.checkSlaves(iPlayer)
 			
 		if iPlayer in [iEgypt]:
 			cnm.onRevolution(iPlayer)
@@ -542,17 +550,6 @@ class CvRFCEventHandler:
 				if plot.getOwner() == iOwner and not plot.isWater():
 					plot.setWithinGreatWall(True)
 					
-		# Leoreth: La Mezquita
-		#if iBuildingType == iMezquita:
-		#	lGPList = [0, 0, 0, 0, 0, 0, 0]
-		#	for city in utils.getCityList(iOwner):
-		#		for i in range(7):
-		#			iSpecialistUnit = utils.getUniqueUnit(iOwner, iGreatProphet + i)
-		#			lGPList[i] += city.getGreatPeopleUnitProgress(iSpecialistUnit)
-		#	iGPType = utils.getUniqueUnit(iOwner, iGreatProphet + utils.getHighestIndex(lGPList))
-		#	utils.makeUnit(iGPType, iOwner, tCity, 1)
-		#	CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(iWhite), city.getX(), city.getY(), True, True)
-
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList
 		

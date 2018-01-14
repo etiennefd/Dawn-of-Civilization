@@ -5048,6 +5048,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									//1800 - end
 									break;
 								case INDIA:
+									if (iI == PHILOSOPHY)
+										iValue *= 5;
 									if (iI == CEREMONY || iI == PRIESTHOOD)
 										iValue *= 20;
 									if (iI == ENGINEERING || iI == THEOLOGY || iI == CIVIL_SERVICE)
@@ -10943,8 +10945,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.getGreatPeopleRateModifier() * getNumCities()) / 10);
 	iValue += ((kCivic.getGreatGeneralRateModifier() * getNumMilitaryUnits()) / 50);
 	iValue += ((kCivic.getDomesticGreatGeneralRateModifier() * getNumMilitaryUnits()) / 100);
-	//iValue += -((kCivic.getDistanceMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / /*8*/ 12);
-	//iValue += -((kCivic.getNumCitiesMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / /*8*/ 12);
+	iValue += -((kCivic.getDistanceMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
+	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
 	iValue += -((kCivic.getDistanceMaintenanceModifier() * calculateDistanceMaintenance()) / 100);
 	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * calculateCitiesMaintenance()) / 100);
 	iValue += (kCivic.getFreeExperience() * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 100;
@@ -10970,12 +10972,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.isBuildingOnlyHealthy()) ? (getNumCities() * 3) : 0);
 	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
 	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12 /*18*/);
-
-	// Leoreth: factor in extra unit upkeep
-	/*if (eCivic == CIVIC_MERCENARIES)
-	{
-		iValue -= getNumMilitaryUnits() / 3;
-	}*/
 
 	// Leoreth: wonder production modifier
 	iTempValue = kCivic.getWonderProductionModifier();
@@ -11436,6 +11432,78 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += countRequiredSlaves() * 50 / 15;
 	}
 
+	// Leoreth: some stability related AI help
+	if (eCivic == CIVIC_TOLERANCE || eCivic == CIVIC_SECULARISM)
+	{
+		if (getStabilityParameter(PARAMETER_RELIGION) < 0)
+		{
+			iValue += 15 * -getStabilityParameter(PARAMETER_RELIGION);
+		}
+	}
+	else if (eCivic == CIVIC_CENTRAL_PLANNING)
+	{
+		if (getStabilityParameter(PARAMETER_ECONOMIC_GROWTH) < 15)
+		{
+			iValue += 200;
+		}
+	}
+	else if (eCivic == CIVIC_PUBLIC_WELFARE)
+	{
+		if (getStabilityParameter(PARAMETER_ECONOMIC_GROWTH) < 0)
+		{
+			iValue += 5 * -getStabilityParameter(PARAMETER_ECONOMIC_GROWTH);
+		}
+	}
+	else if (eCivic == CIVIC_VASSALAGE)
+	{
+		if (getCurrentEra() >= ERA_INDUSTRIAL)
+		{
+			iValue *= 3;
+			iValue /= 4;
+		}
+	}
+	else if (eCivic == CIVIC_DEIFICATION)
+	{
+		if (getCurrentEra() >= ERA_RENAISSANCE)
+		{
+			iValue /= 2;
+		}
+	}
+	else if (eCivic == CIVIC_REDISTRIBUTION)
+	{
+		if (getCurrentEra() >= ERA_MEDIEVAL)
+		{
+			iValue /= 2;
+		}
+	}
+
+	// Leoreth: boost some modern civics as soon as available
+	switch (eCivic)
+	{
+	case CIVIC_IDEOLOGY:
+	case CIVIC_CONSTITUTION:
+	case CIVIC_INDIVIDUALISM:
+	case CIVIC_TOTALITARIANISM:
+	case CIVIC_EGALITARIANISM:
+	case CIVIC_FREE_ENTERPRISE:
+	case CIVIC_CENTRAL_PLANNING:
+	case CIVIC_PUBLIC_WELFARE:
+	case CIVIC_NATIONHOOD:
+	case CIVIC_MULTILATERALISM:
+		iValue *= 6;
+		iValue /= 5;
+		break;
+	case CIVIC_TOLERANCE:
+	case CIVIC_SECULARISM:
+		if (getCurrentEra() >= ERA_GLOBAL)
+		{
+			iValue *= 6;
+			iValue /= 5;
+		}
+	default:
+		break;
+	}
+
 	if (GC.getLeaderHeadInfo(getPersonalityType()).getFavoriteCivic() == eCivic)
 	{
 		if (!kCivic.isStateReligion() || iHighestReligionCount > 0)
@@ -11483,7 +11551,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 	int iBestValue;
 	int iI;
 
-	iBestValue = 0;
+	iBestValue = 1;
 	eBestReligion = NO_RELIGION;
 
 	ReligionTypes eFavorite = (ReligionTypes)GC.getLeaderHeadInfo(getLeaderType()).getFavoriteReligion();
@@ -11513,12 +11581,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 					iValue /= 2;
 				}
 			}
-
-			if (iI == JUDAISM && getStateReligion() == NO_RELIGION)
-			{
-				iValue /= 2;
-			}
-
+			
 			if (iValue > iBestValue)
 			{
 				iBestValue = iValue;
@@ -11554,6 +11617,11 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 int CvPlayerAI::AI_religionValue(ReligionTypes eReligion) const
 {
 	if (getHasReligionCount(eReligion) == 0)
+	{
+		return 0;
+	}
+
+	if (eReligion == JUDAISM)
 	{
 		return 0;
 	}

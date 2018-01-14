@@ -3,7 +3,7 @@ Complete List of Features (as of version 1.15)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
-This version corresponds to Git commit 2335.
+This version corresponds to Git commit 2486.
 
 TABLE OF CONTENTS
 * Included Mods
@@ -248,6 +248,8 @@ GAME RULES
 * Native and Celtic units are not eliminated if they lose their last city
 * Increased culture required to reach Refined to 1000
 * Reduced base power health change to -1
+* Missionaries cannot be gifted to other civilisations
+* Unit gifting is limited to vassals and defensive pacts
 
 CIVILISATIONS
 * Egypt
@@ -299,7 +301,11 @@ CIVILISATIONS
     * Coat of arms: Achaemenid Eagle
     * Unique Unit: Immortal (Spearman): now starts with March
     * Unique Building: Apothecary (Market): +2 food from improved Incense tiles, +1 food from improved Spice and Silk tiles
-    * Unique Power: No expansion stability penalties for low culture
+    * Unique Power: Additional stability from recently conquered cities
+    * Unique Historical Victory:
+	* Control 7% of the world by 140 AD
+	* Control 7 world wonders by 350 AD
+	* Control 2 holy city shrines by 350 AD
 * Rome
     * Unique Unit: Legion (Swordsman): increased cost, +2 strength, +25% against Axeman, can build Roman Road (+1 movement with Masonry)
     * Unique Building: Forum (Market): +25% Great People birth rate, +2 Statesman slots
@@ -400,7 +406,7 @@ CIVILISATIONS
 * Mali
     * Name: Mandinka, Mande
     * Spawn: Djenne
-    * Unique Unit: Kelebolo (Skirmisher): +50% desert strength, +50% against melee units
+    * Unique Unit: Kelebolo (Skirmisher): +50% desert strength, +50% against melee and heavy cavalry units
     * Unique Historical Victory:
         * Conduct a trade mission to your holy city in 1350 AD
         * Build the University of Sankore and settle a Great Prophet in its city by 1500 AD
@@ -575,7 +581,7 @@ NEW CIVILISATIONS
     * Leaders: Barbarossa, Charles V, Francis I
     * Color: Lemon / Black
     * Coat of Arms: Imperial Eagle
-    * Unique Unit: Landsknecht (Pikeman)
+    * Unique Unit: Landsknecht (Pikeman): +100% against melee units
     * Unique Building: Rathaus (Civic Square): -25% upkeep
     * Unique Power: The Power of Investiture: double production for state religion buildings
     * Unique Historical Victory:
@@ -761,15 +767,15 @@ TECHNOLOGIES
 
 UNITS
 * Changed and rebalanced many existing units:
-    * War Elephant (Generalship): Strength 8, +25% against Heavy Cavalry, -25% against Archers
+    * War Elephant (Generalship): Strength 8, +25% against Heavy Cavalry
     * Maceman replaced by Heavy Swordsman
     * Knight has been renamed to Lancer
-    * Crossbowman (Machinery): Strength 6, +25% against Melee, +25% city defense, +25% hill defense
-    * Longbowman (Commune): Strength 6, 50% retreat chance, collateral damage against 3 units (max. 50%), +50% hills attack, +25% against Light Cavalry
-    * Pikeman (Companies): Strength 6, +100% against Melee and Heavy Cavalry
-    * Musketman (Replaceable Parts): Strength 12
+    * Crossbowman (Machinery): Strength 6, +25% against Melee, +25% against Light Cavalry, +25% city defense, +25% hill defense
+    * Longbowman (Commune): Strength 6, 50% retreat chance, collateral damage against 3 units (max. 50%), +50% hills, forest, rainforest
+    * Pikeman (Companies): Strength 8, +50% against Melee and Heavy Cavalry
+    * Musketman (Replaceable Parts): Strength 12, +10% against Arquebusier
     * Grenadier (Chemistry): Strength 10, 50% retreat chance, collateral damage against 3 units (max. 50%), +25% against Rifleman, starts with City Raider I
-    * Artillery (Ballistics): Strength 14, 75% retreat chance, collateral damage against 6 units (max. 60%), 12% bombard rate
+    * Artillery (Ballistics): Strength 14, 50% retreat chance, collateral damage against 5 units (max. 50%), 12% bombard rate
     * Infantry (Social Services): does not receive +25% against gunpowder units
     * Gunship (Aerodynamics): starts with Amphibious
     * Stealth Destroyer (Superconductors): can bombard cities
@@ -799,18 +805,18 @@ UNITS
 NEW UNITS
 * 13 new land units
     * Militia (none): Strength 2, +25% city defense
-    * Light Swordsman (Alloys): Strength 4, +25% attack against Spearman
-    * Horseman (Riding): Strength 5, 20% retreat chance, +25% open terrain attack, +25% against siege units
-    * Skirmisher (Contract, Tanning): Strength 4, 1 first strike, 50% retreat chance, collateral damage against 2 units (max. 25%), +25% hills attack
+    * Light Swordsman (Alloys): Strength 5
+    * Horseman (Riding): Strength 6, 20% retreat chance, +25% against siege units, -25% city strength
+    * Skirmisher (Contract, Tanning): Strength 4, 1 first strike, 50% retreat chance, collateral damage against 2 units (max. 25%), +25% hills, forest, rainforest attack
     * Heavy Spearman (Civil Service): Strength 6, +100% against Heavy Cavalry
     * Bombard (Gunpowder): Strength 5, 75% retreat chance, collateral damage against 5 units (max. 60%), +100% city attack, 12% bombard rate
     * Persecutor (Judiciary): can remove non-state religion
-    * Arquebusier (Firearms): Strength 9
-    * Pistolier (Firearms): Strength 8, 25% retreat chance, +25% open terrain strength
-    * Dragoon (Biology): Strength 12, +25% open terrain strength
-    * Hussar (Nationalism): Strength 10, 30% retreat chance, +25% open terrain strength
-    * Labourer (Labour Unions): +50% work rate, can build Hamlets
-    * Howitzer (Flight): Strength 15, 75% retreat chance, collateral damage against 7 units (max. 70%), +25% city attack, 16% bombard rate
+    * Arquebusier (Firearms): Strength 10
+    * Pistolier (Firearms): Strength 8, 40% retreat chance, +25% open terrain strength
+    * Dragoon (Biology): Strength 14, -25% city strength
+    * Hussar (Nationalism): Strength 10, 50% retreat chance, +25% open terrain strength
+    * Labourer (Labour Unions): +50% work rate, can build Hamlets and Highways
+    * Howitzer (Flight): Strength 15, 50% retreat chance, collateral damage against 6 units (max. 60%), +25% city attack, 16% bombard rate
 * 5 new naval units:
     * Heavy Galley (Alchemy): Strength 5, 50% retreat chance, +25% coast attack
     * Cog (Guilds): Strength 5, 25% retreat chance, 2 cargo
@@ -833,7 +839,7 @@ BUILDINGS
     * Smokehouse (Pastoralism): +1 health from Cow, Pig, Deer
     * Pagan Temple (Mythology): +1 culture, +1 priest slot, requires no state religion, no religion in the city
     * Monument (Ceremony): +2 culture
-    * Weaver (Aesthetics): +25% culture, +1 happiness from Cotton, Silk, Dye
+    * Weaver (Aesthetics): +2 culture, +1 artist slot, +1 happiness from Cotton, Silk, Dye
     * Bath (Medicine): +2 health, +2 culture
     * Pharmacy (Alchemy): +1 health from Wine, Banana, Whale, +1 scientist slot
     * Coffeehouse (Patronage): +1 happiness from Sugar, Tea, Coffee, Tobacco
@@ -853,9 +859,10 @@ BUILDINGS
     * Electrical Grid (Social Services): +10% commerce with power
     * Hotel (Tourism): +20% trade route yield per culture level
     * Solar Plant (Renewable Energy): Provides power, maximum latitude 45 degrees
-* 17 existing buildings have been changed:
+* 18 existing buildings have been changed:
     * Granary (Pottery): retains 25% food after growth, +1 health with Wheat, Rice, Corn
     * Pagan Temple (Mythology): +1 culture, +1 priest slot
+    * Theatre (Literature): +25% culture, +1 artist slot, +1 happiness per 10% culture rate
     * Aqueduct (Cement): retains 25% food after growth
     * Lighthouse (Navigation): +1 trade route
     * Market (Currency): +25% gold, +1 happiness with Fur, Spices, Ivory, Incense
@@ -1299,13 +1306,15 @@ STABILITY
 * Stability checks are now triggered by certain events (e.g. discovering a technology, changing civics, losing/acquiring a city, starting wars, making peace)
 * Stability scores are not permanent anymore, but instead calculated for every stability check (no permanent stability hits anymore)
 * Only stability levels are stored: Collapsing, Unstable, Shaky, Stable, Solid
-* Stability is divided into five categories: Expansion, Economy, Domestic, Foreign, Military
+* Stability is divided into five categories:
+	* Expansion: overexpansion (population outside vs. inside of core), recent expansion, recently razed cities
+	* Economy: economic growth
+	* Domestic: happiness, civic combinations, contemporary and outdated civics, religious unity
+	* Foreign: vassal stability, defensive pacts, foreign relations
+	* Military: war success, war weariness, barbarian losses
 * After a check, the stability level can increase or decrease based on your stability score result
-* After a stability drop to a low level, a crisis occurs
-* The severity of the crisis depends on the stability level, while the effect depends on the on the category with the lowest score
-* A crisis on collapsing results in a complete collapse
+* If stability does not improve when on Collapsing, a complete collapse occurs
 * Collapse after overextension triggers collapse to core instead of a complete collapse
-* Some civics have stability effects in combination with particular state religions
 
 DIPLOMACY
 * Congresses:

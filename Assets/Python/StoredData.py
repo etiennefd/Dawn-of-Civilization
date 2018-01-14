@@ -17,6 +17,9 @@ class PlayerData:
 		self.iPlayer = iPlayer
 		
 		self.setup()
+		
+	def update(self, data):
+		self.__dict__.update(data)
 
 	def setup(self):
 	
@@ -77,8 +80,15 @@ class PlayerData:
 		
 		self.lWarTrend = [[] for _ in range(iNumTotalPlayersB)]		
 		self.lWarStartTurn = [0] * iNumTotalPlayersB
+		self.lLastWarSuccess = [0] * iNumTotalPlayersB
 		
 		self.lStabilityCategoryValues = [0, 0, 0, 0, 0]
+		
+	def resetEconomyTrend(self):
+		self.lEconomyTrend = []
+		
+	def resetHappinessTrend(self):
+		self.lHappinessTrend = []
 		
 	def resetWarTrend(self, iEnemy):
 		self.lWarTrend[iPlayer] = []
@@ -121,6 +131,11 @@ class GameData:
 		
 	def update(self, data):
 		self.__dict__.update(data)
+		
+		for player in self.players:
+			data = player.__dict__.copy()
+			player.setup()
+			player.update(data)
 
 	def setup(self):
 		self.players = [PlayerData(i) for i in range(iNumTotalPlayersB)]

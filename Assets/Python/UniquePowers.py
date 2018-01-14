@@ -581,7 +581,6 @@ class UniquePowers:
 
 		# get available emigration cities
 		lSourceCities = []
-		#lTargetCities = []
 		# get target city: always the israeli capital
 		pIsrael = gc.getPlayer(iIsrael)
 		targetCity = pIsrael.getCapitalCity()

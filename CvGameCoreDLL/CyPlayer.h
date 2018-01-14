@@ -580,6 +580,7 @@ public:
 	void setFreeTechsOnDiscovery(int iNewValue);
 	CyPlot* AI_getCitySite(int iIndex);
 	int AI_getNumCitySites();
+	int AI_getMemoryAttitude(int iPlayer, int iMemory);
 
 private:
 	CvPlayer* m_pPlayer;
