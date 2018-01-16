@@ -1598,6 +1598,11 @@ class RFCUtils:
 		# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
 		if iPlayer == iIndia and gc.getPlayer(iMughals).isAlive(): return False
 		
+		# Exception during Japanese UHV
+		if self.getHumanID() == iJapan and iGameTurn >= getTurnForYear(1920) and iGameTurn <= getTurnForYear(1945):
+			if iPlayer in [iChina, iKorea, iIndonesia, iThailand]:
+				return False
+		
 		if not gc.getPlayer(iPlayer).isAlive() and iGameTurn > data.players[iPlayer].iLastTurnAlive + self.getTurns(20):
 			if tRebirth[iPlayer] == -1 or iGameTurn > getTurnForYear(tRebirth[iPlayer]) + 10:
 				return True
@@ -1704,7 +1709,7 @@ class RFCUtils:
 	def removeStabilityOverlay(self):
 		engine = CyEngine()
 		# clear the highlight
-		for i in range(max(iNumPlotStabilityTypes, iMaxWarValue/2)):
+		for i in range(10):
 			engine.clearAreaBorderPlots(1000+i)
 		self.bStabilityOverlay = False
 		CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", False)
@@ -1819,5 +1824,17 @@ class RFCUtils:
 		for tPlot in self.getPlotList(tTL, tBR):
 			lUnits.extend([unit for unit in self.getUnitList(tPlot) if unit.getOwner() == iPlayer])
 		return lUnits
+		
+	def variation(self, iVariation):
+		return gc.getGame().getSorenRandNum(2 * iVariation, 'Variation') - iVariation
+		
+	def relocateGarrisonToClosestCity(self, city):
+		closestCity = gc.getMap().findCity(city.getX(), city.getY(), city.getOwner(), TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, city)
+		x, y = (closestCity.getX(), closestCity.getY())
+		
+		for tPlot in self.surroundingPlots((city.getX(), city.getY()), 2):
+			for unit in self.getUnitList(tPlot):
+				if unit.getOwner() == city.getOwner():
+					if x >= 0 or y >= 0: unit.setXY(x, y, False, True, False)			
 			
 utils = RFCUtils()

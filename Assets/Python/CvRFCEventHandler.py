@@ -447,7 +447,7 @@ class CvRFCEventHandler:
 		if bCapitulated and iVassal == iChina and iMaster == iMongolia:
 			utils.setReborn(iMongolia, True)
 
-		dc.onVassalState(iVassal)
+		dc.onVassalState(iMaster, iVassal)
 
 	def onRevolution(self, argsList):
 		'Called at the start of a revolution'
@@ -826,10 +826,6 @@ class CvRFCEventHandler:
 		if data.bCheatMode and theKey == int(InputTypes.KB_S) and self.eventManager.bAlt and self.eventManager.bShift:
 			print("SHIFT-ALT-S") #increases stability by one level
 			utils.setStabilityLevel(utils.getHumanID(), min(5, utils.getStabilityLevel(utils.getHumanID()) + 1))
-
-		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_W) and self.eventManager.bCtrl and CyGame().GetWorldBuilderMode():
-			utils.removeStabilityOverlay() # Remove AI forbidden area overlay when exiting WB by ctrl+w
-
 
 		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_V) and self.eventManager.bCtrl and self.eventManager.bShift:
 			for iPlayer in range(iNumTotalPlayersB):
