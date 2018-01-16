@@ -3902,7 +3902,6 @@ dIdentifiers = {
 	"Juli"			:	"Juli",
 	"Lluli"			:	"Juli",
 	"Furukamappu"		:	"Juzhno-Kuri'lsk",
->>>>>>> upstream/develop
 	"Juzhno-Kuri'lsk"	:	"Juzhno-Kuri'lsk",
 	"Colonia Agrippina"	:	"K&#246;ln",
 	"Colonia"		:	"K&#246;ln",
