@@ -591,8 +591,9 @@ class UniquePowers:
 
 			# get Jewish cities of civs at war with Israel
 			if gc.getTeam(pPlayer.getTeam()).isAtWar(iIsrael):
-				lJewishCities = [city for city in utils.getCityList(iPlayer) if city.isHasReligion(iJudaism)]
-				lSourceCities.append(lJewishCities)
+				for city in utils.getCityList(iPlayer):
+					if city.isHasReligion(iJudaism):
+						lSourceCities.append(city)
 
 		#utils.debugTextPopup(str([(x.getName(), y) for (x,y) in lTargetCities]))
 		#utils.debugTextPopup("Target city: "+targetCity.getName())

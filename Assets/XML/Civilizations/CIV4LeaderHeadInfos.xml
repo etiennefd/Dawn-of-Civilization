@@ -65911,7 +65911,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_TOLERANCE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
