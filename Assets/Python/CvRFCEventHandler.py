@@ -249,14 +249,20 @@ class CvRFCEventHandler:
 			capital = gc.getPlayer(iIsrael).getCapitalCity()
 			if gc.getTeam(iOwner).isOpenBorders(iIsrael) and not gc.getTeam(iPlayer).isOpenBorders(iIsrael):
 				# one less Jewish city with open borders
-				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, -1)
-				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, -1)
-				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, -1)
+				food = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0)
+				prod = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1)
+				comm = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2)
+				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, food - 1)
+				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, prod - 1)
+				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, comm - 1)
 			elif not gc.getTeam(iOwner).isOpenBorders(iIsrael) and gc.getTeam(iPlayer).isOpenBorders(iIsrael):
 				# one more Jewish city with open borders
-				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, 1)
-				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, 1)
-				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, 1)
+				food = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0)
+				prod = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1)
+				comm = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2)
+				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, food + 1)
+				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, prod + 1)
+				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, comm + 1)
 
 	def onCityRazed(self, argsList):
 		city, iPlayer = argsList
@@ -270,9 +276,12 @@ class CvRFCEventHandler:
 		# Israeli UP
 		if city.isHasReligion(iJudaism) and city.getOwner().isOpenBorders(iIsrael):
 			capital = gc.getPlayer(iIsrael).getCapitalCity()
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, -1)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, -1)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, -1)
+			food = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0)
+			prod = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1)
+			comm = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, food - 1)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, prod - 1)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, comm - 1)
 
 	def onCityBuilt(self, argsList):
 		city = argsList[0]
@@ -654,9 +663,12 @@ class CvRFCEventHandler:
 		# Israeli UP
 		if iReligion == iJudaism and gc.getTeam(iOwner).isOpenBorders(iIsrael):
 			capital = gc.getPlayer(iIsrael).getCapitalCity()
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, 1)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, 1)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, 1)
+			food = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0)
+			prod = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1)
+			comm = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, food + 1)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, prod + 1)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, comm + 1)
 
 	def onReligionRemove(self, argsList):
 		iReligion, iOwner, pRemoveCity = argsList
@@ -664,9 +676,12 @@ class CvRFCEventHandler:
 		# Israeli UP
 		if iReligion == iJudaism and gc.getTeam(iOwner).isOpenBorders(iIsrael):
 			capital = gc.getPlayer(iIsrael).getCapitalCity()
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, -1)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, -1)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, -1)
+			food = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0)
+			prod = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1)
+			comm = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, food - 1)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, prod - 1)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, comm - 1)
 
 	def onFirstContact(self, argsList):
 		iTeamX,iHasMetTeamY = argsList
@@ -821,9 +836,12 @@ class CvRFCEventHandler:
 			elif iPlayer2 == iIsrael:
 				numjewishcities = len([city for city in utils.getCityList(iPlayer1) if city.isHasReligion(iJudaism)])
 			capital = gc.getPlayer(iIsrael).getCapitalCity()
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, numjewishcities)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, numjewishcities)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, numjewishcities)
+			food = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0)
+			prod = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1)
+			comm = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, food + numjewishcities)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, prod + numjewishcities)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, comm + numjewishcities)
 
 	def onBordersClosed(self, argsList):
 		iPlayer1, iPlayer2 = argsList
@@ -835,9 +853,12 @@ class CvRFCEventHandler:
 			elif iPlayer2 == iIsrael:
 				numjewishcities = len([city for city in utils.getCityList(iPlayer1) if city.isHasReligion(iJudaism)])
 			capital = gc.getPlayer(iIsrael).getCapitalCity()
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, -numjewishcities)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, -numjewishcities)
-			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, -numjewishcities)
+			food = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0)
+			prod = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1)
+			comm = capital.getBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, food - numjewishcities)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, prod - numjewishcities)
+			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, comm - numjewishcities)
 
 	def onEndPlayerTurn(self, argsList):
 		iGameTurn, iPlayer = argsList
