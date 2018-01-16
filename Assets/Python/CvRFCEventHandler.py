@@ -247,12 +247,12 @@ class CvRFCEventHandler:
 		# Israeli UP
 		if city.isHasReligion(iJudaism):
 			capital = gc.getPlayer(iIsrael).getCapitalCity()
-			if iOwner.isOpenBorders(iIsrael) and not iPlayer.isOpenBorders(iIsrael):
+			if gc.getTeam(iOwner).isOpenBorders(iIsrael) and not gc.getTeam(iPlayer).isOpenBorders(iIsrael):
 				# one less Jewish city with open borders
 				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, -1)
 				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, -1)
 				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, -1)
-			elif not iOwner.isOpenBorders(iIsrael) and iPlayer.isOpenBorders(iIsrael):
+			elif not gc.getTeam(iOwner).isOpenBorders(iIsrael) and gc.getTeam(iPlayer).isOpenBorders(iIsrael):
 				# one more Jewish city with open borders
 				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, 1)
 				capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, 1)
@@ -652,7 +652,7 @@ class CvRFCEventHandler:
 		cnm.onReligionSpread(iReligion, iOwner, pSpreadCity)
 
 		# Israeli UP
-		if iReligion == iJudaism and iOwner.isOpenBorders(iIsrael):
+		if iReligion == iJudaism and gc.getTeam(iOwner).isOpenBorders(iIsrael):
 			capital = gc.getPlayer(iIsrael).getCapitalCity()
 			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, 1)
 			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, 1)
@@ -662,7 +662,7 @@ class CvRFCEventHandler:
 		iReligion, iOwner, pRemoveCity = argsList
 
 		# Israeli UP
-		if iReligion == iJudaism and iOwner.isOpenBorders(iIsrael):
+		if iReligion == iJudaism and gc.getTeam(iOwner).isOpenBorders(iIsrael):
 			capital = gc.getPlayer(iIsrael).getCapitalCity()
 			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, -1)
 			capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, -1)
