@@ -642,3 +642,16 @@ class UniquePowers:
 				CyInterface().addMessage(iSourcePlayer, False, iDuration, CyTranslator().getText("TXT_KEY_UP_EMIGRATION_ALIYAH", (sourceCity.getName(),)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iSettler).getButton(), ColorTypes(iYellow), sourceCity.getX(), sourceCity.getY(), True, True)
 			elif utils.getHumanID() == iTargetPlayer:
 				CyInterface().addMessage(iTargetPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_UP_IMMIGRATION_ALIYAH", (targetCity.getName(),)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iSettler).getButton(), ColorTypes(iYellow), x, y, True, True)
+
+	def computeAliyahBonus(self):
+		capital = gc.getPlayer(iIsrael).getCapitalCity()
+
+		#count all cities with Judaism in civs who have open borders with Israel
+		openjewishcities = 0
+		for iPlayer in range(iNumPlayers):
+			if gc.getTeam(iPlayer).isOpenBorders(iIsrael):
+				openjewishcities += len([city for city in utils.getCityList(iPlayer) if city.isHasReligion(iJudaism)])
+
+		capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, openjewishcities)
+		capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, openjewishcities)
+		capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, openjewishcities)
