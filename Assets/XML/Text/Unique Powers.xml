@@ -724,7 +724,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IMMIGRATION_ALIYAH</Tag>
-		<English>The Jewish population of %s1 is fleeing their country and performing their Aliyah to our capital city!</English>
+		<English>The Jewish population of %s1 is fleeing %2 and performing their Aliyah to %3!</English>
 	</TEXT>
 
 </Civ4GameText>
