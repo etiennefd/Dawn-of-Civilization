@@ -471,6 +471,7 @@ dCapitals = {
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
 	iVikings : ["Stockholm", "Oslo", "Nidaros", "Kalmar", "Roskilde"],
 	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
+	iHolyRome : ["Buda"],
 	iRussia : ["Moskva", "Kiev"],
 	iItaly : ["Fiorenza", "Roma"],
 	iTamils : ["Madurai", "Thiruvananthapuram", "Cochin", "Kozhikode"],
@@ -1086,6 +1087,9 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN"
 
 	elif iPlayer == iHolyRome:
+		if isCapital(iPlayer, ["Buda"]):
+			return "TXT_KEY_CIV_HOLY_ROME_HUNGARY"
+
 		if not bEmpire:
 			if iGameTurn < getTurnForYear(tBirth[iGermany]):
 				return "TXT_KEY_CIV_HOLY_ROME_GERMANY"
@@ -1339,6 +1343,9 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ENGLAND_BRITISH"
 
 	elif iPlayer == iHolyRome:
+		if isCapital(iPlayer, ["Buda"]):
+			return "TXT_KEY_CIV_HOLY_ROME_HUNGARIAN"
+
 		if pGermany.isAlive() and iCivicLegitimacy == iConstitution:
 			return "TXT_KEY_CIV_HOLY_ROME_AUSTRO_HUNGARIAN"
 
@@ -1755,6 +1762,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iHolyRome:
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+
+		if isCapital(iPlayer, ["Buda"]):
+			return "TXT_KEY_KINGDOM_OF"
 
 		if pGermany.isAlive():
 			return "TXT_KEY_CIV_HOLY_ROME_ARCHDUCHY_OF"
