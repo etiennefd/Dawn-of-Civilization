@@ -11581,7 +11581,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 					iValue /= 2;
 				}
 			}
-			
+
 			if (iValue > iBestValue)
 			{
 				iBestValue = iValue;
@@ -11621,7 +11621,7 @@ int CvPlayerAI::AI_religionValue(ReligionTypes eReligion) const
 		return 0;
 	}
 
-	if (eReligion == JUDAISM)
+	if (eReligion == JUDAISM && getID() != ISRAEL)
 	{
 		return 0;
 	}
