@@ -1014,19 +1014,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ISR2_TITLE</Tag>
-		<English>By Stratagem You Wage War</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ISR2</Tag>
-		<English>Create three great spies by 2000 AD</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ISR3_TITLE</Tag>
 		<English>Start-up Nation</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2</Tag>
+		<English>Have the city with the highest research output in 2000 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3_TITLE</Tag>
+		<English>By Stratagem You Wage War</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ISR3</Tag>
-		<English>Have the city with the highest research output in 2010 AD</English>
+		<English>Create three great spies by 2010 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA1_TITLE</Tag>

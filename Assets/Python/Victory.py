@@ -1415,17 +1415,17 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1980):
 			expire(iIsrael, 0)
 
-		# second goal: create three great spies by 2000 AD
+		# second goal: have the city with the highest research output in 2000 AD
 		if iGameTurn == getTurnForYear(2000):
-			expire(iIsrael, 1)
-
-		# third goal: have the city with the highest research output in 2010 AD
-		if iGameTurn == getTurnForYear(2010):
 			highestResearchCity = getHighestResearchCity(iIsrael)
 			if isBestCity(iPlayer, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput):
 				win(iIsrael, 2)
 			else:
 				lose(iIsrael, 2)
+
+		# second goal: create three great spies by 2000 AD
+		if iGameTurn == getTurnForYear(2010):
+			expire(iIsrael, 1)
 
 
 	# check religious victory (human only)
@@ -1887,7 +1887,7 @@ def onGreatPersonBorn(iPlayer, unit):
 				if pAztecs.getGreatGeneralsCreated() >= 3:
 					win(iAztecs, 1)
 
-	# second Israeli goal: get three great spies by 2010 AD
+	# third Israeli goal: get three great spies by 2010 AD
 	if iPlayer == iIsrael:
 		if isPossible(iIsrael, 1):
 			if pUnitInfo.getGreatPeoples(iSpecialistGreatSpy):
