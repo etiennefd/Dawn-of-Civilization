@@ -11582,6 +11582,11 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 				}
 			}
 
+			else if (iI == ISLAM && getID() == ISRAEL)
+			{
+				iValue /= 2;
+			}
+
 			if (iValue > iBestValue)
 			{
 				iBestValue = iValue;
