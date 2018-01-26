@@ -1424,8 +1424,8 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iIsrael, 2)
 
 		# second goal: create three great spies by 2000 AD
-		if iGameTurn == getTurnForYear(2010):
-			expire(iIsrael, 1)
+		#if iGameTurn == getTurnForYear(2010):
+		#	expire(iIsrael, 1)
 
 
 	# check religious victory (human only)
@@ -1887,11 +1887,11 @@ def onGreatPersonBorn(iPlayer, unit):
 				if pAztecs.getGreatGeneralsCreated() >= 3:
 					win(iAztecs, 1)
 
-	# third Israeli goal: get three great spies by 2010 AD
+	# third Israeli goal: get two great spies by 2010 AD
 	if iPlayer == iIsrael:
 		if isPossible(iIsrael, 1):
 			if pUnitInfo.getGreatPeoples(iSpecialistGreatSpy):
-				if pIsrael.getGreatSpiesCreated() >= 3:
+				if pIsrael.getGreatSpiesCreated() >= 2:
 					win(iIsrael, 1)
 
 def onUnitPillage(iPlayer, iGold, iUnit):
@@ -3981,7 +3981,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iIsraeliNuclearArsenal >= 1) + localText.getText("TXT_KEY_VICTORY_NUCLEAR_ARSENAL", (iIsraeliNuclearArsenal, 1)))
 		elif iGoal == 1:
 			iSpies = pIsrael.getGreatSpiesCreated()
-			aHelp.append(getIcon(iSpies >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 3)))
+			aHelp.append(getIcon(iSpies >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 2)))
 		elif iGoal == 2:
 			highestResearchCity = getHighestResearchCity(iIsrael)
 			pBestCity = getBestCity(iIsrael, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput)

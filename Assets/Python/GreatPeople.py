@@ -3097,6 +3097,14 @@ iCivIsrael : { # all 20th century
 		"Michael Barkai",
 		"fOrna Barbivai",
 	],
+	iGreatSpy : [
+		"fHannah Szenes",
+		"Isser Harel",
+		"Jonathan Pollard",
+		"Eli Cohen",
+		"Gamliel Cohen",
+		"fYolande Harmer",
+	],
 },
 }
 
