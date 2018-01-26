@@ -1423,7 +1423,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iIsrael, 2)
 
-		# second goal: create three great spies by 2000 AD
+		# second goal: create two great spies (no time limit)
 		#if iGameTurn == getTurnForYear(2010):
 		#	expire(iIsrael, 1)
 
@@ -3980,12 +3980,12 @@ def getUHVHelp(iPlayer, iGoal):
 			iIsraeliNuclearArsenal = pIsrael.getUnitClassCount(gc.getUnitInfo(iICBM).getUnitClassType())
 			aHelp.append(getIcon(iIsraeliNuclearArsenal >= 1) + localText.getText("TXT_KEY_VICTORY_NUCLEAR_ARSENAL", (iIsraeliNuclearArsenal, 1)))
 		elif iGoal == 1:
-			iSpies = pIsrael.getGreatSpiesCreated()
-			aHelp.append(getIcon(iSpies >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 2)))
-		elif iGoal == 2:
 			highestResearchCity = getHighestResearchCity(iIsrael)
 			pBestCity = getBestCity(iIsrael, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput)
 			bBestCity = isBestCity(iIsrael, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput)
 			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_OUTPUT", (pBestCity.getName(),)))
+		elif iGoal == 2:
+			iSpies = pIsrael.getGreatSpiesCreated()
+			aHelp.append(getIcon(iSpies >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 2)))
 
 	return aHelp
