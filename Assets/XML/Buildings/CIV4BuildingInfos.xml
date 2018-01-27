@@ -994,7 +994,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
-			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
+			<iGreatPeopleRateModifier>15</iGreatPeopleRateModifier>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<YieldChanges>
