@@ -2890,6 +2890,8 @@ void CvPlayer::doTurn()
 
 	GC.getGameINLINE().verifyDeals();
 
+	checkCapitalCity();
+
 	AI_doTurnPre();
 
 	if (getRevolutionTimer() > 0)
@@ -25282,7 +25284,7 @@ bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) con
 
 		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 		{
-			if (getID() != iI)
+			if (getID() != iI && GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
 				if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)
 				{
@@ -25297,14 +25299,17 @@ bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) con
 
 	if (pCity->getReligionCount() > 0) return false;
 
-	CvCity* pCapitalCity = getCapitalCity();
-	if (pCapitalCity != NULL)
+	if (getStateReligion() == eReligion)
 	{
-		if (GC.getMap().getArea(pCapitalCity->getArea())->getClosestAreaSize(30) != GC.getMap().getArea(pCity->getArea())->getClosestAreaSize(30))
+		CvCity* pCapitalCity = getCapitalCity();
+		if (pCapitalCity != NULL)
 		{
-			if (2 * GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) <= GC.getMap().getArea(pCity->getArea())->getCitiesPerPlayer(getID()))
+			if (GC.getMap().getArea(pCapitalCity->getArea())->getClosestAreaSize(30) != GC.getMap().getArea(pCity->getArea())->getClosestAreaSize(30))
 			{
-				return true;
+				if (2 * GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) <= GC.getMap().getArea(pCity->getArea())->getCitiesPerPlayer(getID()))
+				{
+					return true;
+				}
 			}
 		}
 	}
@@ -25550,4 +25555,43 @@ bool CvPlayer::canBuySlaves() const
 	}
 
 	return false;
+}
+
+void CvPlayer::checkCapitalCity()
+{
+	if (getCapitalCity() != NULL)
+	{
+		return;
+	}
+
+	BuildingTypes eCapitalBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(GC.getDefineINT("CAPITAL_BUILDINGCLASS"))));
+
+	if (eCapitalBuilding == NO_BUILDING)
+	{
+		return;
+	}
+
+	int iLoop;
+	CvCity* pLoopCity;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		pLoopCity->setNumRealBuilding(eCapitalBuilding, 0);
+	}
+
+	findNewCapital();
+}
+
+void CvPlayer::restoreGeneralThreshold()
+{
+	changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
+
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+		{
+			GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatGeneralsCreated() / 10) + 1));
+		}
+	}
+
+	decrementGreatGeneralsCreated();
 }

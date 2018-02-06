@@ -1884,7 +1884,9 @@ def onGreatPersonBorn(iPlayer, unit):
 	if iPlayer == iAztecs:
 		if pAztecs.isReborn() and isPossible(iAztecs, 1):
 			if pUnitInfo.getGreatPeoples(iSpecialistGreatGeneral):
-				if pAztecs.getGreatGeneralsCreated() >= 3:
+				data.iMexicanGreatGenerals += 1
+				
+				if data.iMexicanGreatGenerals >= 3:
 					win(iAztecs, 1)
 
 	# third Israeli goal: get two great spies by 2010 AD
@@ -3837,7 +3839,7 @@ def getUHVHelp(iPlayer, iGoal):
 					iNumCathedrals = getNumBuildings(iAztecs, iStateReligionCathedral)
 				aHelp.append(getIcon(iNumCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_STATE_RELIGION_CATHEDRALS", (gc.getReligionInfo(iStateReligion).getAdjectiveKey(), iNumCathedrals, 3)))
 			elif iGoal == 1:
-				iGenerals = pAztecs.getGreatGeneralsCreated()
+				iGenerals = data.iMexicanGreatGenerals
 				aHelp.append(getIcon(iGenerals >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS", (iGenerals, 3)))
 			elif iGoal == 2:
 				pBestCity = getBestCity(iAztecs, (18, 37), cityPopulation)
