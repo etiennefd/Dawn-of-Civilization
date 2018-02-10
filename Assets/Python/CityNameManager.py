@@ -3310,7 +3310,7 @@ dIdentifiers = {
 	"Antalya"		:	"Attaleia",
 	"Attalea"		:	"Attaleia",
 	"Attaleia"		:	"Attaleia",
-	"Danni B&#225;a"	:	"Atzompan",
+	"Danibaan"		:	"Atzompan",
 	"Augsburg"		:	"Augsburg",
 	"Augusta Vindelicorum"	:	"Augsburg",
 	"Augusta"		:	"Augsburg",
@@ -3586,7 +3586,7 @@ dIdentifiers = {
 	"Coedeloer"		:	"Cuddalore",
 	"Cuddalore"		:	"Cuddalore",
 	"Dagou"			:	"Dagou",
-	"Danni B&#225;a"	:	"Danni B&#225;a",
+	"Danibaan"		:	"Danibaan",
 	"Dabao"			:	"Davao",
 	"Davao"			:	"Davao",
 	"Delphi"		:	"Delphoi",
@@ -4239,7 +4239,7 @@ dIdentifiers = {
 	"Mombasa"		:	"Mombasa",
 	"Cabo Mesurado"		:	"Monrovia",
 	"Monrovia"		:	"Monrovia",
-	"Danni B&#225;a"	:	"Monte Alb&#225;n",
+	"Danibaan"		:	"Monte Alb&#225;n",
 	"Montr&#233;al"		:	"Montreal",
 	"Montreal"		:	"Montreal",
 	"Moskau"		:	"Moskva",
@@ -5690,7 +5690,7 @@ tRenames = (
 },
 #Language: Mayan
 {
-	"Danni B&#225;a"	:	"Danni B&#225;a",
+	"Danibaan"		:	"Danibaan",
 	"Teotihuacan"		:	"Puh",
 	"Q'umarkaj"		:	"Q'umarkaj",
 },
@@ -6013,7 +6013,7 @@ tRenames = (
 	"Marrakus"		:	"Marraquech",
 	"Marseille"		:	"Marsella",
 	"Melilla"		:	"Melilla",
-	"Danni B&#225;a"	:	"Monte Alb&#225;n",
+	"Danibaan"		:	"Monte Alb&#225;n",
 	"Neapolis"		:	"N&#225;poles",
 	"Nueva Iberia"		:	"Nueva Iberia",
 	"Nouvelle Orl&#233;ans"	:	"Nueva Orleans",
@@ -6892,7 +6892,7 @@ tRenames = (
 },
 #Language: Aztec
 {
-	"Danni B&#225;a"	:	"Atzompan",
+	"Danibaan"		:	"Atzompan",
 	"Teotihuacan"		:	"Teotihuacan",
 	"Q'umarkaj"		:	"Utatl&#225;n",
 },
