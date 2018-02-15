@@ -5972,6 +5972,15 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		return false;
 	}
 
+	// Leoreth: if a wonder is obsolete for anyone, you cannot build it anymore
+	if ((TechTypes)GC.getBuildingInfo(eBuilding).getObsoleteTech() != NO_TECH)
+	{
+		if (isWorldWonderClass(eBuildingClass) && GC.getGameINLINE().countKnownTechNumTeams((TechTypes)GC.getBuildingInfo(eBuilding).getObsoleteTech()) > 0)
+		{
+			return false;
+		}
+	}
+
 	if (GC.getBuildingInfo(eBuilding).getSpecialBuildingType() != NO_SPECIALBUILDING)
 	{
 		if (!(currentTeam.isHasTech((TechTypes)(GC.getSpecialBuildingInfo((SpecialBuildingTypes) GC.getBuildingInfo(eBuilding).getSpecialBuildingType()).getTechPrereq()))))
@@ -7652,7 +7661,7 @@ bool CvPlayer::canEverResearch(TechTypes eTech) const
 }
 
 
-bool CvPlayer::canResearch(TechTypes eTech, bool bTrade) const
+bool CvPlayer::canResearch(TechTypes eTech, bool bTrade, TechTypes eGivenTech) const
 {
 	bool bFoundPossible;
 	bool bFoundValid;
@@ -7692,7 +7701,7 @@ bool CvPlayer::canResearch(TechTypes eTech, bool bTrade) const
 		{
 			bFoundPossible = true;
 
-			if (GET_TEAM(getTeam()).isHasTech(ePrereq))
+			if (GET_TEAM(getTeam()).isHasTech(ePrereq) || ePrereq == eGivenTech) // Leoreth
 			{
 				//Rhye
 				//if (!bTrade || GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) || !GET_TEAM(getTeam()).isNoTradeTech(ePrereq))
@@ -7715,7 +7724,7 @@ bool CvPlayer::canResearch(TechTypes eTech, bool bTrade) const
 		TechTypes ePrereq = (TechTypes)GC.getTechInfo(eTech).getPrereqAndTechs(iI);
 		if (ePrereq != NO_TECH)
 		{
-			if (!GET_TEAM(getTeam()).isHasTech(ePrereq))
+			if (!GET_TEAM(getTeam()).isHasTech(ePrereq) && (eGivenTech == NO_TECH || ePrereq != eGivenTech))
 			{
 				return false;
 			}
@@ -25616,4 +25625,11 @@ void CvPlayer::restoreGeneralThreshold()
 	}
 
 	decrementGreatGeneralsCreated();
+}
+
+void CvPlayer::resetGreatPeopleCreated()
+{
+	m_iGreatPeopleCreated = 0;
+	m_iGreatGeneralsCreated = 0;
+	m_iGreatSpiesCreated = 0;
 }
