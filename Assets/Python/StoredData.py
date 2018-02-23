@@ -238,6 +238,7 @@ class GameData:
 		self.iMexicanGreatGenerals = 0
 		self.iArgentineGoldenAgeTurns = 0
 		self.iCanadianPeaceDeals = 0
+		self.iIsraeliResearchTurns = 0
 		
 		self.iPopeTurns = 0
 		self.iHinduGoldenAgeTurns = 0
