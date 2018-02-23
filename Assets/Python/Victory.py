@@ -3984,7 +3984,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iIsraeliNuclearArsenal >= 1) + localText.getText("TXT_KEY_VICTORY_NUCLEAR_ARSENAL", (iIsraeliNuclearArsenal, 1)))
 		elif iGoal == 1:
 			x, y = 0, 0
-			capital = pPlayer.getCapitalCity()
+			capital = pIsrael.getCapitalCity()
 			if capital:
 				x, y = capital.getX(), capital.getY()
 			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
