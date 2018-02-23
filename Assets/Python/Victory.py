@@ -1419,9 +1419,13 @@ def checkTurn(iGameTurn, iPlayer):
 		if isPossible(iIsrael, 1):
 			if data.iIsraeliResearchTurns >= utils.getTurns(10):
 				win(iIsrael, 1)
-
-			pHighestResearchCity = getHighestResearchCity(iPlayer)
-			if isBestCity(iPlayer, (pHighestResearchCity.getX(), pHighestResearchCity.getY()), cityResearchOutput):				
+			
+			x, y = 0, 0
+			capital = pPlayer.getCapitalCity()
+			if capital:
+				x, y = capital.getX(), capital.getY()
+			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
+			if pBestCity.getOwner() == iPlayer: 
 				data.iIsraeliResearchTurns += 1
 
 		# third goal: create two great spies (no time limit)
@@ -2551,9 +2555,6 @@ def countOpenBorders(iPlayer, lContacts = [i for i in range(iNumPlayers)]):
 
 def getMostCulturedCity(iPlayer):
 	return utils.getHighestEntry(utils.getCityList(iPlayer), lambda x: x.getCulture(iPlayer))
-
-def getHighestResearchCity(iPlayer):
-	return utils.getHighestEntry(utils.getCityList(iPlayer), cityResearchOutput)
 
 def isAreaFreeOfCivs(lPlots, lCivs):
 	for city in utils.getAreaCities(lPlots):
@@ -3982,9 +3983,12 @@ def getUHVHelp(iPlayer, iGoal):
 			iIsraeliNuclearArsenal = pIsrael.getUnitClassCount(gc.getUnitInfo(iICBM).getUnitClassType())
 			aHelp.append(getIcon(iIsraeliNuclearArsenal >= 1) + localText.getText("TXT_KEY_VICTORY_NUCLEAR_ARSENAL", (iIsraeliNuclearArsenal, 1)))
 		elif iGoal == 1:
-			pBestCity = getHighestResearchCity(iIsrael)
-			bBestCity = isBestCity(iIsrael, (pBestCity.getX(), pBestCity.getY()), cityResearchOutput)
-			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)))
+			x, y = 0, 0
+			capital = pPlayer.getCapitalCity()
+			if capital:
+				x, y = capital.getX(), capital.getY()
+			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
+			aHelp.append(getIcon(pBestCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)))
 			iResearchTurns = data.iIsraeliResearchTurns
 			aHelp.append(getIcon(iResearchTurns >= utils.getTurns(10)) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_TURNS", (iResearchTurns, 10)))
 		elif iGoal == 2:
