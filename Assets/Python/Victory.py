@@ -3988,9 +3988,8 @@ def getUHVHelp(iPlayer, iGoal):
 			if capital:
 				x, y = capital.getX(), capital.getY()
 			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
-			aHelp.append(getIcon(pBestCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)))
 			iResearchTurns = data.iIsraeliResearchTurns
-			aHelp.append(getIcon(iResearchTurns >= utils.getTurns(10)) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_TURNS", (iResearchTurns, 10)))
+			aHelp.append(getIcon(pBestCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)) + ' ' + getIcon(iResearchTurns >= utils.getTurns(10)) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_TURNS", (iResearchTurns, 10)))
 		elif iGoal == 2:
 			iSpies = pIsrael.getGreatSpiesCreated()
 			aHelp.append(getIcon(iSpies >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 2)))
