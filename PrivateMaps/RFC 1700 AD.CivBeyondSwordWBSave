@@ -19758,10 +19758,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Reykjavik
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -22188,13 +22188,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Marrakus
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -25987,13 +25987,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Bergen
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -26247,13 +26247,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Ngazargamu
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -27067,19 +27067,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=K&#248;benhavn
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -27116,16 +27116,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Oslo
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -27660,13 +27660,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Trondheim
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -32843,13 +32843,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Mombasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -33392,13 +33392,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Gondar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -34436,16 +34436,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=44, (Independent)
+		UnitType=UNIT_BOMBARD, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Muqdisho
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -38250,16 +38250,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=44, (Independent)
+		UnitType=UNIT_CANNON, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Masqat
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
@@ -38785,16 +38785,16 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_CUIRASSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Merv
 		CityPopulation=4
 		BuildingType=BUILDING_STABLE
@@ -39731,16 +39731,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_CUIRASSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Samarkand
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -41523,13 +41523,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Kashgar
 		CityPopulation=4
 		BuildingType=BUILDING_WALLS
@@ -43952,13 +43952,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_CUIRASSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Turfan
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -44788,10 +44788,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (China)
 	EndUnit
 	BeginCity
-		CityOwner=44, (China)
+		CityOwner=45, (China)
 		CityName=Lasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -45555,16 +45555,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Yangon
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -47056,19 +47056,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Hanoi
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
@@ -48492,16 +48492,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Pontianak
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -48548,16 +48548,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Saigon
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -50095,10 +50095,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (China)
 	EndUnit
 	BeginCity
-		CityOwner=44, (China)
+		CityOwner=45, (China)
 		CityName=Qiqihar
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -50347,16 +50347,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Makassar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY

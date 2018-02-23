@@ -1420,8 +1420,8 @@ def checkTurn(iGameTurn, iPlayer):
 			if data.iIsraeliResearchTurns >= utils.getTurns(10):
 				win(iIsrael, 1)
 
-			highestResearchCity = getHighestResearchCity(iPlayer)
-			if isBestCity(iPlayer, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput):				
+			pHighestResearchCity = getHighestResearchCity(iPlayer)
+			if isBestCity(iPlayer, (pHighestResearchCity.getX(), pHighestResearchCity.getY()), cityResearchOutput):				
 				data.iIsraeliResearchTurns += 1
 
 		# third goal: create two great spies (no time limit)
@@ -3982,9 +3982,8 @@ def getUHVHelp(iPlayer, iGoal):
 			iIsraeliNuclearArsenal = pIsrael.getUnitClassCount(gc.getUnitInfo(iICBM).getUnitClassType())
 			aHelp.append(getIcon(iIsraeliNuclearArsenal >= 1) + localText.getText("TXT_KEY_VICTORY_NUCLEAR_ARSENAL", (iIsraeliNuclearArsenal, 1)))
 		elif iGoal == 1:
-			highestResearchCity = getHighestResearchCity(iIsrael)
-			pBestCity = getBestCity(iIsrael, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput)
-			bBestCity = isBestCity(iIsrael, (highestResearchCity.getX(), highestResearchCity.getY()), cityResearchOutput)
+			pBestCity = getHighestResearchCity(iIsrael)
+			bBestCity = isBestCity(iIsrael, (pBestCity.getX(), pBestCity.getY()), cityResearchOutput)
 			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)))
 			iResearchTurns = data.iIsraeliResearchTurns
 			aHelp.append(getIcon(iResearchTurns >= utils.getTurns(10)) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_TURNS", (iResearchTurns, 10)))
