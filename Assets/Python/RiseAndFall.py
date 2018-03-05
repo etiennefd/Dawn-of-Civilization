@@ -3058,6 +3058,7 @@ class RiseAndFall:
 		tCapital = Areas.getCapital(iVikings)
 		tSeaPlot = self.findSeaPlots(tCapital, 1, iVikings)
 		if tSeaPlot:
+			utils.makeUnit(iWorkboat, iVikings, tSeaPlot, 1)
 			if utils.getHumanID() == iVikings:
 				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA, 1)
 				utils.makeUnit(iSettler, iVikings, tSeaPlot, 1)
