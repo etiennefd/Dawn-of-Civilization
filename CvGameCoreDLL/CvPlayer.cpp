@@ -38,6 +38,8 @@
 #include "CvBugOptions.h"
 // BUG - Ignore Harmless Barbarians - end
 
+#include <algorithm>
+
 // Public Functions...
 
 CvPlayer::CvPlayer()
@@ -1371,6 +1373,8 @@ CvCity* CvPlayer::initCity(int iX, int iY, bool bBumpUnits, bool bUpdatePlotGrou
 
 	pCity->init(pCity->getID(), getID(), iX, iY, bBumpUnits, bUpdatePlotGroups);
 
+	updateCultureRanks();
+
 	return pCity;
 }
 
@@ -1698,15 +1702,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	// Leoreth: log game turn of losing this city for previous owner
 	pNewCity->setGameTurnPlayerLost(eOldOwner, GC.getGameINLINE().getGameTurn());
 
-	//Leoreth: protect middle eastern cities from Seljuk invasions
-	if (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)
-	{
-		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation)) : iPopulation);
-	}
-	else
-	{
-		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
-	}
+	pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
 
 	pNewCity->setHighestPopulation(iHighestPopulation);
 	pNewCity->setName(szName);
@@ -2931,6 +2927,8 @@ void CvPlayer::doTurn()
 		pLoopCity->doTurn();
 	}
 
+	updateCultureRanks();
+
 	// Leoreth: anarchy doesn't cost golden age turns
 	if (getGoldenAgeTurns() > 0 && !isAnarchy())
 	{
@@ -3928,12 +3926,6 @@ bool CvPlayer::canContact(PlayerTypes ePlayer) const
 		return false;
 	}
 
-	//Leoreth: Seljuks should be covered by minors but make sure here anyway
-	if (getID() == SELJUKS || ePlayer == (PlayerTypes)SELJUKS)
-	{
-		return false;
-	}
-
 	if (getTeam() != GET_PLAYER(ePlayer).getTeam())
 	{
 		if (!(GET_TEAM(getTeam()).isHasMet(GET_PLAYER(ePlayer).getTeam())))
@@ -4676,6 +4668,11 @@ bool CvPlayer::canTradeNetworkWith(PlayerTypes ePlayer) const
 
 int CvPlayer::getNumAvailableBonuses(BonusTypes eBonus) const
 {
+	if (eBonus == NO_BONUS)
+	{
+		return 0;
+	}
+
 	CvPlotGroup* pPlotGroup;
 
 	pPlotGroup = ((getCapitalCity() != NULL) ? getCapitalCity()->plot()->getOwnerPlotGroup() : NULL);
@@ -5929,7 +5926,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	eBuildingClass = ((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType()));
 
-	FAssert(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass) == eBuilding);
+	//FAssert(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass) == eBuilding);
 	if (GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass) != eBuilding)
 	{
 		return false;
@@ -11410,9 +11407,6 @@ void CvPlayer::verifyAlive()
 
 	if (isAlive())
 	{
-		// Leoreth: keep Seljuks alive early on to avoid exploits
-		if (getID() == SELJUKS && GC.getGameINLINE().getGameTurnYear() < 1250) return;
-
 		bKill = false;
 
 		if (!bKill)
@@ -12923,7 +12917,7 @@ bool CvPlayer::isUnitClassMaxedOut(UnitClassTypes eIndex, int iExtra) const
 		return false;
 	}
 
-	FAssertMsg(getUnitClassCount(eIndex) <= GC.getUnitClassInfo(eIndex).getMaxPlayerInstances(), "getUnitClassCount is expected to be less than maximum bound of MaxPlayerInstances (invalid index)");
+	//FAssertMsg(getUnitClassCount(eIndex) <= GC.getUnitClassInfo(eIndex).getMaxPlayerInstances(), "getUnitClassCount is expected to be less than maximum bound of MaxPlayerInstances (invalid index)");
 
 	return ((getUnitClassCount(eIndex) + iExtra) >= GC.getUnitClassInfo(eIndex).getMaxPlayerInstances());
 }
@@ -13682,7 +13676,7 @@ void CvPlayer::changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes
 	if (iChange != 0)
 	{
 		m_ppaaiImprovementYieldChange[eIndex1][eIndex2] = (m_ppaaiImprovementYieldChange[eIndex1][eIndex2] + iChange);
-		FAssert(getImprovementYieldChange(eIndex1, eIndex2) >= 0);
+		//FAssert(getImprovementYieldChange(eIndex1, eIndex2) >= 0);
 
 		updateYield();
 	}
@@ -14677,7 +14671,7 @@ void CvPlayer::doGold()
 
 	iGoldChange = calculateGoldRate();
 
-	FAssert(isHuman() || isBarbarian() || ((getGold() + iGoldChange) >= 0) || isAnarchy());
+	//FAssert(isHuman() || isBarbarian() || ((getGold() + iGoldChange) >= 0) || isAnarchy());
 
 	changeGold(iGoldChange);
 
@@ -21257,7 +21251,7 @@ void CvPlayer::doEvents()
 void CvPlayer::expireEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData, bool bFail)
 {
 	FAssert(getEventOccured(eEvent) == &kTriggeredData);
-	FAssert(GC.getEventInfo(eEvent).isQuest() || GC.getGameINLINE().getGameTurn() - kTriggeredData.m_iTurn <= 4);
+	//FAssert(GC.getEventInfo(eEvent).isQuest() || GC.getGameINLINE().getGameTurn() - kTriggeredData.m_iTurn <= 4);
 
 	if (GC.getEventInfo(eEvent).isQuest())
 	{
@@ -25418,7 +25412,7 @@ bool CvPlayer::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscover
 	CvCity* pCity;
 	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
 	{
-		if (pCity->plot()->getSpreadFactor(eReligion) >= REGION_SPREAD_CORE)
+		if (pCity->plot()->getSpreadFactor(eReligion) >= REGION_SPREAD_HISTORICAL)
 		{
 			return true;
 		}
@@ -25641,4 +25635,46 @@ bool CvPlayer::canUseSlaves() const
 	if (isNoSlavery()) return false;
 
 	return true;
+}
+
+struct cultureRankCompare
+{
+	bool operator() (CvCity* left, CvCity* right)
+	{
+		return left->getCulture(left->getOwnerINLINE()) > right->getCulture(right->getOwnerINLINE());
+	}
+};
+
+void CvPlayer::updateCultureRanks() const
+{
+	int iLoop;
+	CvPlotGroup* pPlotGroup;
+	for (pPlotGroup = firstPlotGroup(&iLoop); pPlotGroup != NULL; pPlotGroup = nextPlotGroup(&iLoop))
+	{
+		updateCultureRanks(pPlotGroup);
+	}
+}
+
+void CvPlayer::updateCultureRanks(CvPlotGroup* pPlotGroup) const
+{
+	std::vector<CvCity*> cities;
+
+	int iLoop;
+	CvCity* pLoopCity;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		if (pLoopCity->plot()->getPlotGroup(getID()) == pPlotGroup)
+		{
+			cities.push_back(pLoopCity);
+		}
+	}
+
+	cultureRankCompare cmp;
+	std::sort(cities.begin(), cities.end(), cmp);
+
+	int iCount = 0;
+	for (std::vector<CvCity*>::iterator it = cities.begin(); it != cities.end(); ++it)
+	{
+		(*it)->setCultureRank(iCount++);
+	}
 }

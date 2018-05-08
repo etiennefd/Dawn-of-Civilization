@@ -94,6 +94,10 @@
 		<English>Bolivar</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_BUMIN</Tag>
+		<English>Bumin</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_CARDENAS</Tag>
 		<English>Cardenas</English>
 	</TEXT>
@@ -443,6 +447,10 @@
 		<English>Suharto</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_TAMERLANE</Tag>
+		<English>Tamerlane</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_TAIZONG</Tag>
 		<English>Tang Taizong</English>
 	</TEXT>
@@ -539,7 +547,12 @@
 		<English>George I</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_KHOSROW</Tag>
+		<English>Khosrow I</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_BEN_GURION</Tag>
 		<English>Ben-Gurion</English>
+		<French>Ben-Gourion</French>
 	</TEXT>
 </Civ4GameText>

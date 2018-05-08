@@ -1576,12 +1576,17 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+		<Tag>TXT_KEY_UNIT_TURKIC_OGHUZ</Tag>
+		<English>Oghuz</English>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA</Tag>
 		<English>Merkava</English>
+		<French>Merkava</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</English>
+		<French>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</French>
 	</TEXT>
 </Civ4GameText>

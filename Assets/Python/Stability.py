@@ -583,7 +583,7 @@ def completeCollapse(iPlayer):
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if iPlayer == iByzantium:
-		utils.removeReligionByArea(Areas.getCoreArea(iTurkey), iOrthodoxy)
+		utils.removeReligionByArea(Areas.getCoreArea(iOttomans), iOrthodoxy)
 		
 	# Chinese collapse: Mongolia's core moves south
 	if iPlayer == iChina:
@@ -777,8 +777,8 @@ def calculateStability(iPlayer):
 					if not isTolerated(iPlayer, iReligion) and not gc.getReligionInfo(iReligion).isLocal():
 						bNonStateReligion = True
 						break
-					
-			if city.isHasReligion(iStateReligion):
+
+			if iStateReligion >= 0 and city.isHasReligion(iStateReligion):
 				iStateReligionPopulation += iPopulation
 				if not bNonStateReligion: iOnlyStateReligionPopulation += iPopulation
 					
@@ -789,7 +789,7 @@ def calculateStability(iPlayer):
 	iPopulationImprovements = 0
 	for (x, y) in Areas.getCoreArea(iPlayer):
 		plot = gc.getMap().plot(x, y)
-		if plot.getOwner() == iPlayer:
+		if plot.getOwner() == iPlayer and plot.getWorkingCity():
 			if plot.getImprovementType() in [iVillage, iTown]:
 				iPopulationImprovements += 1
 			
@@ -1021,7 +1021,7 @@ def calculateStability(iPlayer):
 		# relations
 		if tPlayer.canContact(iLoopPlayer):
 			iNumContacts += 1
-		
+
 			if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS: iFuriousRelations += 1
 			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY: iFriendlyRelations += 1
 			
@@ -1579,6 +1579,8 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	data.iRebelCiv = iPlayer
 	
 	for iOtherCiv in range(iNumPlayers):
+		if iPlayer == iOtherCiv: continue
+
 		teamPlayer.makePeace(iOtherCiv)
 		
 		if teamPlayer.isVassal(iOtherCiv):
@@ -1715,6 +1717,9 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 			
 	elif iPlayer == iIndia:
 		utils.setReborn(iIndia, gc.getGame().getGameTurn() < getTurnForYear(1900))
+		
+	elif iPlayer == iArabia:
+		utils.setReborn(iArabia, True)
 	
 		
 	# others revert to their old cores instead

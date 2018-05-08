@@ -1416,19 +1416,24 @@
 		<English>Astar Temple</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_</Tag>
-		<English></English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TURKIC_DIVAN</Tag>
+		<English>Divan</English>
+	</TEXT>
 		<Tag>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ</Tag>
 		<English>Kibbutz</English>
+		<French>Kibboutz</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</English>
+		<French>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_</Tag>
+		<English></English>
 	</TEXT>
 </Civ4GameText>

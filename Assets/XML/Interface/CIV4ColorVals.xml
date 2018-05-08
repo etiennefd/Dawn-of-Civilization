@@ -1065,7 +1065,7 @@
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
-			<Type>COLOR_SELJUK</Type>
+			<Type>COLOR_SILVER</Type>
 			<fRed>0.745</fRed>
 			<fGreen>0.862</fGreen>
 			<fBlue>0.941</fBlue>
@@ -1163,7 +1163,14 @@
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
-			<Type>COLOR_PLAYER_ISRAEL</Type>
+			<Type>COLOR_PLAYER_GREYISH_BLUE</Type>
+			<fRed>0.28</fRed>
+			<fGreen>0.44</fGreen>
+			<fBlue>1.00</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_ISRAEL_BLUE</Type>
 			<fRed>0.37</fRed>
 			<fGreen>0.53</fGreen>
 			<fBlue>0.69</fBlue>

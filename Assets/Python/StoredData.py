@@ -52,6 +52,7 @@ class PlayerData:
 		# Victory
 		
 		self.lGoals = [-1, -1, -1]
+		self.lGoalTurns = [-1, -1, -1]
 		self.bHistoricalGoldenAge = False
 		
 		# Stability
@@ -61,7 +62,7 @@ class PlayerData:
 		# Tech Log
 		
 		self.iTechColumn = 0
-		
+	
 	def resetStability(self):
 		self.iStabilityLevel = iStabilityShaky
 		
@@ -229,6 +230,7 @@ class GameData:
 		self.iTamilTradeGold = 0
 		self.iColombianTradeGold = 0
 		self.iVikingGold = 0
+		self.iTurkicPillages = 0
 		self.iMoorishGold = 0
 		self.iEnglishSinks = 0
 		self.iMongolRazes = 0
@@ -239,6 +241,9 @@ class GameData:
 		self.iArgentineGoldenAgeTurns = 0
 		self.iCanadianPeaceDeals = 0
 		self.iIsraeliResearchTurns = 0
+		
+		self.tFirstTurkicCapital = None
+		self.tSecondTurkicCapital = None
 		
 		self.iPopeTurns = 0
 		self.iHinduGoldenAgeTurns = 0
