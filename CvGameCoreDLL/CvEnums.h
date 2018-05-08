@@ -1225,6 +1225,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	KHOSROW,
 	BUMIN,
 	TAMERLANE,
+	BEN_GURION,
 	NUM_LEADERHEADS
 };
 
