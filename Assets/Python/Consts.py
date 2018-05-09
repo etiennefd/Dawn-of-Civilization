@@ -192,7 +192,7 @@ lNeighbours = [
 [iSpain, iPortugal, iInca, iBrazil], #Argentina
 [iSpain, iPortugal, iInca, iArgentina], #Brazil
 [iAmerica], #Canada
-[iEgypt, iArabia, iTurkey], #Israel
+[iEgypt, iArabia, iOttomans], #Israel
 ]
 
 #for stability hit on spawn
@@ -242,7 +242,7 @@ lOlderNeighbours = [
 [iSpain, iPortugal, iInca], #Argentina
 [iSpain, iPortugal, iInca], #Brazil
 [iAmerica], #Canada
-[iEgypt, iArabia, iTurkey], #Israel
+[iEgypt, iArabia, iOttomans], #Israel
 ]
 
 # civ birth dates
@@ -515,7 +515,7 @@ lEnemyCivsOnSpawn = [
 [iSpain, iSpain, iIndependent,iIndependent2], #Argentina
 [iIndependent,iIndependent2], #Brazil
 [], #Canada
-[iEgypt,iEgypt,iEgypt,iPersia,iArabia,iArabia,iArabia,iMoors,iTurkey,iTurkey], #Israel
+[iEgypt,iEgypt,iEgypt,iPersia,iArabia,iArabia,iArabia,iMoors,iOttomans,iOttomans], #Israel
 ]
 
 # Leoreth
