@@ -1468,7 +1468,7 @@ def checkTurn(iGameTurn, iPlayer):
 
 		# second goal: have the city with the highest research output for 10 turns (no time limit)
 		if isPossible(iIsrael, 1):
-			if data.iIsraeliResearchTurns >= utils.getTurns(10):
+			if data.iIsraeliResearchTurns >= 10:
 				win(iIsrael, 1)
 			
 			x, y = 0, 0
@@ -4101,7 +4101,7 @@ def getUHVHelp(iPlayer, iGoal):
 				x, y = capital.getX(), capital.getY()
 			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
 			iResearchTurns = data.iIsraeliResearchTurns
-			aHelp.append(getIcon(pBestCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)) + ' ' + getIcon(iResearchTurns >= utils.getTurns(10)) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_TURNS", (iResearchTurns, 10)))
+			aHelp.append(getIcon(pBestCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)) + ' ' + getIcon(iResearchTurns >= 10) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_TURNS", (iResearchTurns, 10)))
 		elif iGoal == 2:
 			iSpies = pIsrael.getGreatSpiesCreated()
 			aHelp.append(getIcon(iSpies >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 2)))
