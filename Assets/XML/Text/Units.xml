@@ -2629,4 +2629,20 @@
 		<Italian>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</Italian>
 		<Spanish>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MUISCA_GUECHA</Tag>
+		<English>Guecha</English>
+		<French>Guecha</French>
+		<German>Guecha</German>
+		<Italian>Guecha</Italian>
+		<Spanish>Guecha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MUISCA_GUECHA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Guecha[COLOR_REVERT], the Muisca replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and more!</English>
+		<French>The [COLOR_UNIT_TEXT]Guecha[COLOR_REVERT], the Muisca replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and more!</French>
+		<German>The [COLOR_UNIT_TEXT]Guecha[COLOR_REVERT], the Muisca replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and more!</German>
+		<Italian>The [COLOR_UNIT_TEXT]Guecha[COLOR_REVERT], the Muisca replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and more!</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Guecha[COLOR_REVERT], the Muisca replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and more!</Spanish>
+	</TEXT>
 </Civ4GameText>

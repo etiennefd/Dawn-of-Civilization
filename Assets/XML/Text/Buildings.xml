@@ -2934,6 +2934,22 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MUISCA_GOLDSMITH</Tag>
+		<English>Goldsmith</English>
+		<French>Orf&#232;vre</French>
+		<German>Goldsmith</German>
+		<Italian>Goldsmith</Italian>
+		<Spanish>Goldsmith</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MUISCA_GOLDSMITH_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Goldsmith[COLOR_REVERT], the Muisca replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides culture and extra happiness with access to [COLOR_HIGHLIGHT_TEXT]Gold[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Goldsmith[COLOR_REVERT], the Muisca replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides culture and extra happiness with access to [COLOR_HIGHLIGHT_TEXT]Gold[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Goldsmith[COLOR_REVERT], the Muisca replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides culture and extra happiness with access to [COLOR_HIGHLIGHT_TEXT]Gold[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Goldsmith[COLOR_REVERT], the Muisca replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides culture and extra happiness with access to [COLOR_HIGHLIGHT_TEXT]Gold[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Goldsmith[COLOR_REVERT], the Muisca replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides culture and extra happiness with access to [COLOR_HIGHLIGHT_TEXT]Gold[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
