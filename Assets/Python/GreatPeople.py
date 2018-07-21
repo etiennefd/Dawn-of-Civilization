@@ -3909,6 +3909,39 @@ iCivIsrael : { # all 20th century
 		"fYolande Harmer",
 	],
 },
+iCivMuisca : { 
+	iGreatProphet : [
+		"Goranchacha", # mythological
+		u"Idacansás", # mythological
+		"Thomagata", # mythological
+		"Aquiminzaque", # 16th
+	],
+	iGreatArtist : [
+		"fHuitaca", # mythological
+		"Nencatacoa", # mythological
+		"Meicuchuca", # 15th
+	],
+	iGreatScientist : [
+		"Bochica", # mythological
+		"Pacanchique", # 16th
+		"Moyachoque", # 16th
+	],
+	iGreatMerchant : [
+		"Quemuenchatocha", # 16th
+		"Tundama", # 16th
+	],
+	iGreatStatesman : [
+		u"Hunzahúa", # 15th
+		"Nompanim", # 16th
+		"Sugamuxi", # 16th
+	],
+	iGreatGeneral : [
+		u"Michuá", # 15th
+		"Nemequene", # 16th
+		"Tisquesusa", # 16th
+		"Sagipa", # 16th
+	],
+},
 }
 
 setup()

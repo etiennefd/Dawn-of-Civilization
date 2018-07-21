@@ -148,6 +148,7 @@ iCivMoors :	Techs([iMachinery, iAlchemy, iTheology], column=6, exceptions=[iPoli
 iCivSpain : 	Techs([iFeudalism, iAlchemy, iGuilds], column=6),
 iCivFrance :	Techs([iFeudalism, iTheology], column=6),
 iCivKhmer :	Techs([iNobility, iArchitecture, iArtisanry, iScholarship, iEthics], column=5),
+iCivMuisca : 	Techs([iMining, iPottery, iAgriculture, iMythology, iTanning]),
 iCivEngland :	Techs([iFeudalism, iTheology], column=6),
 iCivHolyRome :	Techs([iFeudalism, iTheology], column=6),
 iCivRussia :	Techs([iFeudalism], column=6, exceptions=[iPolitics, iScholarship, iEthics]),

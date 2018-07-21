@@ -2755,8 +2755,8 @@
 				</Leader>
 			</Leaders>
 			<DerivativeCiv>CIVILIZATION_ARABIA</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_CARTHAGE_SELECT</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_CARTHAGE_ORDER</CivilizationActionSound>
+			<CivilizationSelectionSound>AS3D_ARABIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_ARABIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_ITALY</Type>

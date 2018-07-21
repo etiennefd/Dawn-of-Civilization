@@ -26,7 +26,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_MUISCA_PEOPLES</Tag>
 		<English>Chibcha Peoples</English>
 		<French>
 			<Text>Peuplades chibcha</Text>
@@ -146,7 +146,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_MUISCA_SHORT_DESC</Tag>
 		<English>Muisca</English>
 		<French>
 			<Text>Muisca</Text>

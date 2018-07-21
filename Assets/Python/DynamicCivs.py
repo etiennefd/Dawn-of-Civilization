@@ -467,6 +467,7 @@ dEmpireThreshold = {
 	iTibet : 2,
 	iPolynesia : 3,
 	iTamils : 3,
+	iMuisca : 2,
 }
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
@@ -548,6 +549,7 @@ dStartingLeaders = [
 	iMoors : iRahman,
 	iSpain : iIsabella,
 	iFrance : iCharlemagne,
+	iMuisca : iSaguamanchica,
 	iEngland : iAlfred,
 	iHolyRome : iBarbarossa,
 	iRussia : iIvan,
@@ -1123,6 +1125,10 @@ def specificName(iPlayer):
 		if isCapital(iPlayer, ["Dali"]):
 			return "TXT_KEY_CIV_KHMER_NANZHAO"
 			
+	elif iPlayer == iMuisca:
+		if not bEmpire:
+			return capitalName(iPlayer)
+				
 	elif iPlayer == iIndonesia:
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_INDONESIA_MATARAM"
@@ -1856,6 +1862,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if isCapital(iPlayer, ["Hanoi"]):
 			return "TXT_KEY_CIV_KHMER_DAI_VIET"
+			
+	elif iPlayer == iMuisca:
+		if bEmpire:
+			return "TXT_KEY_MUISCA_CONFEDERATION"
 			
 	elif iPlayer == iIndonesia:
 		if iReligion == iIslam:

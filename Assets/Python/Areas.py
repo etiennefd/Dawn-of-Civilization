@@ -126,6 +126,7 @@ tCapitals = (
 (52, 44), # Madrid
 (55, 50), # Paris
 (102, 33), # Angkor
+(27, 29), # Bacata
 (53, 54), # London
 (59, 51), # Frankfurt
 (73, 54), # Moskow
@@ -154,7 +155,7 @@ iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iCarthage : (58, 39),	# Carthage
 iPersia : (81, 41),	# Esfahan (Iran)
-iMaya : (27, 29),	# Bogota (Colombia)
+iMuisca : (27, 29),	# Bogota (Colombia)
 iTamils : (90, 30),	# Vijayanagara
 iKhmer : (101, 37),	# Hanoi
 iHolyRome : (62, 49),	# Vienna
@@ -218,6 +219,7 @@ tBirthArea = (
 ((49, 43), 	(53, 46)), 	# Spain
 ((51, 46), 	(57, 52)), 	# France
 ((100, 32), 	(103, 36)), 	# Khmer
+((27, 29),	(29, 31)),	# Muisca
 ((50, 53), 	(54, 60)), 	# England
 ((58, 48), 	(64, 54)), 	# Holy Rome
 ((67, 50), 	(74, 58)), 	# Russia
@@ -308,6 +310,7 @@ tCoreArea = (
 ((49, 43),	(53, 46)),	# Spain
 ((51, 46),	(57, 51)),	# France
 ((100, 32),	(103, 36)),	# Khmer
+((27, 29),	(29, 31)),	# Muisca
 ((50, 53),	(54, 60)),	# England
 ((58, 48),	(64, 54)),	# HolyRome
 ((68, 49),	(75, 59)),	# Russia
@@ -336,7 +339,6 @@ iChina : 	((99, 41),	(107, 47)),
 iGreece :	((65, 39), 	(69, 42)),
 iIndia : 	((88, 33),	(91, 38)),
 iPhoenicia:	((54, 37),	(60, 39)),
-iMaya : 	((24, 26),	(31, 32)),	# Colombia
 iByzantium :	((67, 44),	(69, 46)),
 iJapan : 	((111, 41),	(116, 49)),
 iTurks : 	((79, 37),	(85, 44)),
@@ -344,6 +346,7 @@ iArabia :	((73, 30),	(82, 36)),
 iMoors : 	((51, 37),	(56, 39)),
 iSpain : 	((49, 40),	(55, 46)),
 iKhmer : 	((97, 35),	(102, 38)),
+iMuisca : 	((24, 26),	(31, 32)),	# Colombia
 iHolyRome : 	((61, 46),	(66, 51)),
 iItaly : 	((58, 40),	(63, 47)),
 iMongolia : 	((95, 46),	(106, 52)),
@@ -380,9 +383,9 @@ dChangedCoreAreaExceptions = {
 iChina : [(99, 41), (106, 47)],
 iGreece : [(64, 45), (65, 45), (66, 46)],
 #iPersia : [], # Iran
-iMaya : [(30, 26), (30, 27), (30, 28), (30, 29), (31, 26), (31, 27)], # Colombia
 iSpain : [(49, 41), (49, 42), (49, 43), (49, 44), (50, 42), (50, 43), (50, 44), (55, 46)],
 iKhmer : [(104, 39)],
+iMuisca : [(30, 26), (30, 27), (30, 28), (30, 29), (31, 26), (31, 27)], # Colombia
 iHolyRome : [(61, 51), (64, 51), (65, 51), (66, 51)],
 iItaly : [(63, 46), (63, 47)],
 iAztecs : [(19, 40)], # Mexico
@@ -420,6 +423,7 @@ tNormalArea = (
 ((49, 40), 	(55, 46)), 	# Spain
 ((51, 46), 	(58, 52)), 	# France
 ((98, 26), 	(103, 37)), 	# Khmer
+((24, 26),	(29, 32)), # Muisca
 ((50, 53), 	(54, 60)), 	# England
 ((58, 48), 	(65, 54)), 	# Holy Rome
 ((68, 49), 	(83, 62)), 	# Russia
@@ -446,8 +450,8 @@ tNormalArea = (
 dChangedNormalArea = {
 iIndia : 	((96, 42),	(97, 42)),
 iCarthage : 	((71, 39),	(74, 41)),
-iMaya : 	((24, 26),	(29, 32)), # Colombia
 iArabia : 	((73, 30),	(82, 38)),
+iMuisca : 	((24, 26),	(29, 32)), # Colombia
 iHolyRome : 	((61, 46),	(66, 50)),
 }
 
@@ -508,6 +512,7 @@ tBroaderArea = (
 ((49, 38), 	(55, 46)), 	# Spain
 ((49, 44), 	(61, 52)), 	# France
 ((97, 25), 	(105, 39)), 	# Khmer
+((33, 32),	(33, 32)),	# Muisca
 ((48, 53), 	(54, 60)), 	# England
 ((58, 43), 	(64, 54)), 	# Holy Rome
 ((65, 48), 	(92, 59)), 	# Russia
@@ -532,7 +537,7 @@ tBroaderArea = (
 )
 
 dChangedBroaderArea = {
-iMaya :		((33, 32),	(33, 32)),	# Colombia
+iMuisca :		((33, 32),	(33, 32)),	# Colombia
 iByzantium : 	((64, 38),	(74, 45)),
 iHolyRome :	((61, 46),	(66, 50)),
 iMughals :	((84, 37),	(94, 43)),
@@ -555,13 +560,13 @@ iMughals :	((85, 37),	(88, 43)),
 
 dRebirthPlot = {
 iPersia : (81, 41),	# Esfahan (Iran)
-iMaya : (27, 29),	# Bogota (Colombia)
+iMuisca : (27, 29),	# Bogota (Colombia)
 iAztecs : (18, 37),	# Mexico City (Mexico)
 }
 
 dRebirthArea = {
 iPersia :	((78, 38),	(86, 43)),	# Iran
-iMaya :		((23, 25), 	(31, 32)),	# Colombia
+iMuisca :	((23, 25), 	(31, 32)),	# Colombia
 iAztecs :	((11, 34), 	(23, 48)),	# Mexico
 }
 
