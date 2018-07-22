@@ -1033,10 +1033,10 @@
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_SAGUAMANCHICA</Type>
 			<Button>Art/LeaderHeads/Tuitatui/Button_Tu'itatui.dds</Button>
-			<NIF>art/LeaderHeads/Tuitatui/Tokugawa.nif</NIF>
-			<KFM>art/LeaderHeads/Tuitatui/Tokugawa.kfm</KFM>
-			<NoShaderNIF>art/LeaderHeads/Tuitatui/Tokugawa.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Tuitatui/Tokugawa_BG.kfm</BackgroundKFM>
+			<NIF>art/LeaderHeads/Saguamanchica/Arawak.nif</NIF>
+			<KFM>art/LeaderHeads/Saguamanchica/Arawak.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Saguamanchica/Arawak.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Saguamanchica/Arawak_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

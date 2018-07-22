@@ -1182,6 +1182,9 @@ class RiseAndFall:
 					x, y = tCapital
 					break
 
+		if iCiv == iMuisca:
+			gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bacata/Bogota
+
 		if iCurrentTurn == iBirthYear-1 + data.players[iCiv].iSpawnDelay + data.players[iCiv].iFlipsDelay:
 			if iCiv in lConditionalCivs or bCapitalSettled:
 				utils.convertPlotCulture(gc.getMap().plot(x,y), iCiv, 100, True)
@@ -1826,7 +1829,7 @@ class RiseAndFall:
 						gc.getMap().plot(28, 31).setFeatureType(-1, 0)
 						gc.getMap().plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
 						gc.getMap().plot(32, 19).setPlotType(PlotTypes.PLOT_HILLS, True, True)
-						gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
+						#gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
 					elif iNewWorldCiv == iAztecs:
 						gc.getMap().plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)
 						
@@ -2549,6 +2552,9 @@ class RiseAndFall:
 			utils.makeUnit(iHeavySpearman, iCiv, tPlot, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
 			utils.createMissionaries(iCiv, 1)
+		elif iCiv == iMuisca:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iMilitia, iCiv, tPlot, 2)
 		elif iCiv == iEngland:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
